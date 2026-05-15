@@ -20,7 +20,7 @@ export default function PremiumHero() {
   return (
     <section 
       ref={containerRef}
-      className="relative h-[100vh] w-full overflow-hidden bg-midnight flex items-center"
+      className="relative min-h-[100dvh] w-full overflow-hidden bg-midnight flex items-center py-24 md:py-32"
     >
       {/* Background Image with Parallax */}
       <motion.div 
@@ -38,7 +38,7 @@ export default function PremiumHero() {
       </motion.div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 pt-32 md:pt-40">
+      <div className="container-custom relative z-10">
         <motion.div
           style={{ opacity }}
           className="max-w-4xl"
