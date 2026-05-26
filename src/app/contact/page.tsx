@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-widest text-xs">24/7 Dispatch Center</h4>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4 font-light">Available for urgent bookings and support.</p>
-                  <a href="tel:+918690091154" className="font-black text-slate-900 text-xl hover:text-primary transition-colors tracking-tighter">+91 86900 91154</a>
+                  <a href="tel:+917627013579" className="font-black text-slate-900 text-xl hover:text-primary transition-colors tracking-tighter">+91 76270 13579</a>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
         </a>
       </div>
       <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white">
-        <a href="tel:+918690091154" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase"><Phone className="w-4 h-4 text-primary" /> Call Now</a>
+        <a href="tel:+917627013579" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase"><Phone className="w-4 h-4 text-primary" /> Call Now</a>
         <a href="https://wa.me/919660953135" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
       </div>
     </main>

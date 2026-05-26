@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/PremiumHero";
 import DetailedAbout from "@/components/sections/DetailedAbout";
 import { Reveal } from "@/components/ui/Reveal";
+import ThreeDScrollWrapper from "@/components/ui/ThreeDScrollWrapper";
 import { Phone, MessageCircle } from "lucide-react";
 
 // Dynamic imports for below-the-fold components to improve initial load speed
@@ -13,26 +14,26 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true }
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pb-16 md:pb-0">
+    <main className="relative min-h-screen bg-transparent selection:bg-gold-premium selection:text-midnight pb-16 md:pb-0">
       {/* 1. Navigation & Hero - Critical for LCP */}
       <Navbar />
       <Hero />
 
-      <Reveal width="100%">
+      <ThreeDScrollWrapper>
         <DetailedAbout />
-      </Reveal>
+      </ThreeDScrollWrapper>
 
-      <Reveal width="100%" delay={0.1}>
+      <ThreeDScrollWrapper>
         <WhyChooseUs />
-      </Reveal>
+      </ThreeDScrollWrapper>
       
-      <Reveal width="100%" delay={0.1}>
+      <ThreeDScrollWrapper>
         <Testimonials />
-      </Reveal>
+      </ThreeDScrollWrapper>
 
-      <Reveal width="100%" delay={0.1}>
+      <ThreeDScrollWrapper>
         <FAQ />
-      </Reveal>
+      </ThreeDScrollWrapper>
 
       <Footer />
 
@@ -43,7 +44,7 @@ export default function Home() {
       {/* Mobile Sticky Action Bar (Hidden on Desktop) */}
       <div className="fixed bottom-0 left-0 w-full z-[80] md:hidden flex border-t border-white/10 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
         <a
-          href="tel:+918690091154"
+          href="tel:+917627013579"
           className="flex-1 bg-midnight text-white flex items-center justify-center gap-2 py-4 font-bold text-xs uppercase tracking-widest border-r border-white/5"
         >
           <Phone className="w-4 h-4 text-gold-premium" /> Call Now

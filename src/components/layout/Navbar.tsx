@@ -20,9 +20,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About Us", href: "/about" },
+    { name: "Book Now", href: "/booking" },
     { name: "Corporate", href: "/corporate-travel-udaipur" },
-    { name: "Weddings", href: "/wedding-car-rental-udaipur" },
-    { name: "Events", href: "/event-transportation-udaipur" },
+    { name: "Explore Udaipur", href: "/explore-udaipur" },
     { name: "Contact", href: "/contact" }
   ];
 
@@ -52,13 +52,17 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Links */}
+          {/* Desktop Links (Now with Book Now as a direct link) */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm font-bold tracking-widest uppercase transition-colors ${isSolid ? "text-midnight hover:text-gold-premium" : "text-white/80 hover:text-white"}`}
+                className={`text-sm font-bold tracking-widest uppercase transition-colors ${
+                  isSolid 
+                    ? "text-midnight hover:text-gold-premium" 
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.name}
               </Link>
@@ -67,14 +71,10 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-4">
-             <a href="tel:+918690091154" className={`hidden sm:flex items-center gap-2 font-bold transition-colors ${isSolid ? "text-midnight" : "text-white"}`}>
+             <a href="tel:+917627013579" className={`hidden xl:flex items-center gap-2 font-bold transition-colors ${isSolid ? "text-midnight" : "text-white"}`}>
                 <Phone className="w-4 h-4 text-gold-premium" />
-                <span className="text-sm">+91 86900 91154</span>
+                <span className="text-sm">+91 76270 13579</span>
              </a>
-
-             <Link href="/booking" className={`rounded-full hidden sm:flex px-6 py-2.5 text-sm font-bold transition-all hover:scale-105 active:scale-95 ${isSolid ? "bg-midnight text-white hover:bg-slate-800" : "bg-gold-premium text-midnight hover:bg-white"}`}>
-               Book Now
-             </Link>
 
              <button 
                aria-label="Toggle Menu"
@@ -96,7 +96,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="lg:hidden fixed inset-0 z-[120] bg-midnight overflow-hidden flex flex-col"
+            className="lg:hidden fixed inset-0 z-[120] bg-midnight overflow-y-auto flex flex-col"
           >
             {/* Background Texture/Gradient */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -104,7 +104,7 @@ export default function Navbar() {
               <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-blue-500/10 rounded-full blur-[80px]" />
             </div>
 
-            <div className="relative flex flex-col p-8 h-full z-10">
+            <div className="relative flex flex-col p-8 min-h-screen z-10">
                {/* Header */}
                <div className="flex justify-between items-center mb-12 pt-2">
                   <div className="flex items-center gap-3">
@@ -148,28 +148,20 @@ export default function Navbar() {
                  ))}
                </div>
 
-               {/* Footer Info */}
-               <div className="mt-auto pt-8 pb-16 space-y-8">
+               {/* Footer Info & Mobile Contact */}
+               <div className="mt-auto pt-12 pb-8 space-y-8">
                   <div className="space-y-4">
-                    <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Quick Contact</p>
-                    <a href="tel:+918690091154" className="flex items-center gap-4 text-white group">
-                      <div className="w-12 h-12 rounded-2xl bg-gold-premium flex items-center justify-center text-midnight group-active:scale-95 transition-transform">
-                        <Phone className="w-6 h-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-none mb-1">Call Concierge</span>
-                        <span className="text-xl font-black tracking-tight">+91 86900 91154</span>
-                      </div>
-                    </a>
+                     <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Quick Contact</p>
+                     <a href="tel:+917627013579" className="flex items-center gap-4 text-white group">
+                       <div className="w-12 h-12 rounded-2xl bg-gold-premium flex items-center justify-center text-midnight group-active:scale-95 transition-transform">
+                         <Phone className="w-6 h-6" />
+                       </div>
+                       <div className="flex flex-col">
+                         <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-none mb-1">Call Concierge</span>
+                         <span className="text-xl font-black tracking-tight">+91 76270 13579</span>
+                       </div>
+                     </a>
                   </div>
-                  
-                  <Link 
-                    href="/booking" 
-                    onClick={() => setMobileMenuOpen(false)} 
-                    className="flex items-center justify-center w-full bg-white text-midnight rounded-2xl py-5 font-black uppercase tracking-[0.2em] text-sm shadow-2xl active:scale-[0.98] transition-all"
-                  >
-                    Book Your Journey
-                  </Link>
                </div>
             </div>
           </motion.div>
@@ -178,4 +170,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

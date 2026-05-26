@@ -122,34 +122,49 @@ export default function DetailedAbout() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-midnight rounded-[3rem] overflow-hidden mb-32 shadow-3xl border border-white/5"
+          className="bg-midnight rounded-[3rem] overflow-hidden mb-32 shadow-3xl border border-white/10 relative group"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-12 md:p-20 space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-[10px] font-black uppercase tracking-widest">
-                <Leaf className="w-4 h-4" /> Eco-Friendly Pioneers
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gold-premium/5 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
+            <div className="p-12 md:p-20 space-y-8 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-premium/10 text-gold-premium border border-gold-premium/20 text-[10px] font-black uppercase tracking-widest w-fit">
+                <ShieldCheck className="w-4 h-4" /> Signature Fleet
               </div>
               <KineticTitle 
-                text="PIONEERING THE GREEN RIDE INITIATIVE."
+                text="OUR EXCLUSIVE BRANDED FLEET."
                 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[0.95] tracking-tighter uppercase"
                 stagger={0.06}
               />
               <p className="text-slate-400 text-lg leading-relaxed font-light">
-                As pioneers in sustainable travel, we are proud to introduce the Green Ride Initiative. With a fleet of 12 E-rickshaws, we are committed to providing environmentally conscious rides through the narrow lanes of old Udaipur.
+                Travel with pride in our Yatree-branded signature vehicles. Easily recognizable with our distinctive logo, impeccably maintained, and equipped with top-tier amenities to ensure a prestigious journey across Udaipur.
               </p>
               <div className="pt-6">
-                <Link href="/contact" className="flex items-center gap-4 text-white font-black uppercase tracking-[0.2em] text-xs group">
-                  Sustainability Mission <ArrowRight className="w-5 h-5 text-green-400 group-hover:translate-x-2 transition-transform" />
+                <Link href="/contact" className="flex items-center gap-4 text-white font-black uppercase tracking-[0.2em] text-xs group/link w-fit">
+                  Book Branded Ride <ArrowRight className="w-5 h-5 text-gold-premium group-hover/link:translate-x-2 transition-transform" />
                 </Link>
               </div>
             </div>
-            <div className="relative min-h-[400px] bg-slate-900">
+            
+            <div className="relative min-h-[400px] lg:min-h-[500px] overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/50 to-transparent z-10 lg:block hidden" />
+               <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent z-10 lg:hidden block" />
                <Image 
-                src="/premium_udaipur_taxi_hero_1778818369975.png"
-                alt="Green Ride"
+                src="/yatree-branded-car.png"
+                alt="Yatree Branded Car"
                 fill
-                className="object-cover opacity-90"
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
                />
+               
+               <div className="absolute bottom-10 right-10 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-2xl flex items-center gap-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                  <div className="w-12 h-12 rounded-full bg-gold-premium flex items-center justify-center">
+                     <Car className="w-6 h-6 text-midnight" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm uppercase tracking-wider">Premium Sedan</div>
+                    <div className="text-gold-premium text-xs font-black tracking-widest">Yatree Verified</div>
+                  </div>
+               </div>
             </div>
           </div>
         </motion.div>

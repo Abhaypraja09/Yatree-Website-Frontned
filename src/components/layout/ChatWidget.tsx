@@ -152,7 +152,7 @@ export default function ChatWidget() {
 
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="tel:+918690091154"
+                    href="tel:+917627013579"
                     className="flex items-center justify-between p-5 bg-slate-950 hover:bg-slate-900 rounded-3xl transition-all group text-white shadow-xl shadow-slate-900/10"
                   >
                     <div className="flex items-center gap-4">

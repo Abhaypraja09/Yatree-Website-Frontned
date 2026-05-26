@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   ogImage: "/logo.png",
   twitterHandle: "@yatreedestination",
   address: "Shed no.2, Nokha, 100 Feet Rd, near Bethak Cafe, Mali Colony, Gayariawas, Udaipur, Rajasthan 313002",
-  phone: "+91 86900 91154",
+  phone: "+91 76270 13579",
   email: "info@yatreedestination.com",
   keywords: [
     "Taxi Service in Udaipur",

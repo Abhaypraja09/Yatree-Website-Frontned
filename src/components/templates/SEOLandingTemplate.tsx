@@ -153,7 +153,7 @@ export default function SEOLandingTemplate({
                       <MessageCircle className="w-6 h-6" /> WhatsApp Now
                     </button>
                     <button className="w-full h-14 bg-gold-500 hover:bg-gold-600 rounded-2xl flex items-center justify-center gap-3 font-bold text-navy-950 transition-all">
-                      <Phone className="w-5 h-5" /> Call +91 86900 91154
+                      <Phone className="w-5 h-5" /> Call +91 76270 13579
                     </button>
                   </div>
                   <p className="text-center text-xs text-slate-400">Get 10% discount on first online booking!</p>

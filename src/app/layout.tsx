@@ -5,6 +5,7 @@ import { SmoothScroll } from "@/lib/lenis";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/context/AuthContext";
 import CustomCursor from "@/components/ui/CustomCursor";
+import ThreeDScrollBackground from "@/components/ui/ThreeDScrollBackground";
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
 
 const inter = Inter({
@@ -41,7 +42,6 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} ${jakarta.variable} antialiased`}
       >
         <CustomCursor />
-        <InteractiveBackground />
         <script
           id="schema-org"
           type="application/ld+json"
@@ -55,6 +55,7 @@ export default function RootLayout({
         >
           <AuthProvider>
             <SmoothScroll>
+              <ThreeDScrollBackground />
               {children}
               <ChatWidget />
               <ThemeCustomizer />

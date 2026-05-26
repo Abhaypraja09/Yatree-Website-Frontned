@@ -41,10 +41,10 @@ export default function AirportTaxiPage() {
                Premium 24/7 airport pickup and drop services at <strong>Maharana Pratap Airport (UDA)</strong>. Experience seamless, stress-free transfers with our professional chauffeurs.
              </p>
              <div className="flex flex-wrap justify-center gap-4">
-                <a href="tel:+918690091154" className="bg-orange-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center gap-3 hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">
+                <a href="tel:+917627013579" className="bg-orange-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center gap-3 hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">
                   <Phone className="w-4 h-4" /> Book Airport Cab
                 </a>
-                <a href="https://wa.me/918690091154" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center gap-2">
+                <a href="https://wa.me/917627013579" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center gap-2">
                   <MessageCircle className="w-4 h-4" /> WhatsApp Quote
                 </a>
              </div>
@@ -123,8 +123,8 @@ export default function AirportTaxiPage() {
                              </div>
                           </div>
                        </div>
-                       <a href="tel:+918690091154" className="w-full bg-orange-500 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-xs mt-10 block hover:bg-orange-600 transition-colors">
-                          Call +91 86900 91154
+                       <a href="tel:+917627013579" className="w-full bg-orange-500 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-xs mt-10 block hover:bg-orange-600 transition-colors">
+                          Call +91 76270 13579
                        </a>
                     </div>
 
@@ -184,8 +184,8 @@ export default function AirportTaxiPage() {
       <Footer />
 
       <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
-        <a href="tel:+918690091154" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><Phone className="w-4 h-4 text-orange-500" /> Call Now</a>
-        <a href="https://wa.me/918690091154" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
+        <a href="tel:+917627013579" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><Phone className="w-4 h-4 text-orange-500" /> Call Now</a>
+        <a href="https://wa.me/917627013579" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
       </div>
     </main>
   );

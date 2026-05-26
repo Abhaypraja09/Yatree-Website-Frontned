@@ -49,7 +49,7 @@
   }
 
   body {
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
@@ -192,4 +192,91 @@
 /* Clean Transitions */
 .transition-smooth {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   3D SCROLL BACKGROUND GLOBAL INTEGRATION OVERRIDES
+   ========================================================================== */
+
+/* 1. Force section and page backgrounds to be transparent when 3D Canvas is active */
+html:has(#three-d-scroll-bg),
+body:has(#three-d-scroll-bg),
+body:has(#three-d-scroll-bg) main,
+body:has(#three-d-scroll-bg) section,
+body:has(#three-d-scroll-bg) .bg-white,
+body:has(#three-d-scroll-bg) .bg-slate-50,
+body:has(#three-d-scroll-bg) .bg-slate-100 {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 2. Style cards, cards-modern, and other containers with ultra-premium glassmorphism */
+body:has(#three-d-scroll-bg) .card-modern,
+body:has(#three-d-scroll-bg) [class*="bg-white/5"],
+body:has(#three-d-scroll-bg) [class*="bg-slate-50/5"] {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Light mode card styling */
+html:not(.dark) body:has(#three-d-scroll-bg) .card-modern,
+html:not(.dark) body:has(#three-d-scroll-bg) .bg-white {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Dark mode card styling */
+html.dark body:has(#three-d-scroll-bg) .card-modern,
+html.dark body:has(#three-d-scroll-bg) .bg-slate-900,
+html.dark body:has(#three-d-scroll-bg) .bg-slate-950,
+html.dark body:has(#three-d-scroll-bg) .bg-navy-950 {
+  background-color: rgba(15, 23, 42, 0.55) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 3. Typography Color Fixes for Perfect Contrast on Dark/Light 3D Canvas */
+
+/* Light Theme Contrast */
+html:not(.dark) body:has(#three-d-scroll-bg) h1,
+html:not(.dark) body:has(#three-d-scroll-bg) h2,
+html:not(.dark) body:has(#three-d-scroll-bg) h3,
+html:not(.dark) body:has(#three-d-scroll-bg) h4,
+html:not(.dark) body:has(#three-d-scroll-bg) h5,
+html:not(.dark) body:has(#three-d-scroll-bg) h6,
+html:not(.dark) body:has(#three-d-scroll-bg) .text-midnight,
+html:not(.dark) body:has(#three-d-scroll-bg) .text-slate-900,
+html:not(.dark) body:has(#three-d-scroll-bg) .text-slate-950 {
+  color: #0f172a !important; /* Deep dark slate */
+}
+html:not(.dark) body:has(#three-d-scroll-bg) p,
+html:not(.dark) body:has(#three-d-scroll-bg) .text-slate-600,
+html:not(.dark) body:has(#three-d-scroll-bg) .text-slate-500 {
+  color: #334155 !important; /* Dark grey */
+}
+
+/* Dark Theme Contrast */
+html.dark body:has(#three-d-scroll-bg) h1,
+html.dark body:has(#three-d-scroll-bg) h2,
+html.dark body:has(#three-d-scroll-bg) h3,
+html.dark body:has(#three-d-scroll-bg) h4,
+html.dark body:has(#three-d-scroll-bg) h5,
+html.dark body:has(#three-d-scroll-bg) h6,
+html.dark body:has(#three-d-scroll-bg) .text-midnight,
+html.dark body:has(#three-d-scroll-bg) .text-slate-900,
+html.dark body:has(#three-d-scroll-bg) .text-slate-950,
+html.dark body:has(#three-d-scroll-bg) .text-navy-950 {
+  color: #ffffff !important; /* Solid white */
+}
+html.dark body:has(#three-d-scroll-bg) p,
+html.dark body:has(#three-d-scroll-bg) span,
+html.dark body:has(#three-d-scroll-bg) .text-slate-600,
+html.dark body:has(#three-d-scroll-bg) .text-slate-500 {
+  color: #cbd5e1 !important; /* Cool grey */
 }
