@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/lib/lenis";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/context/AuthContext";
 import CustomCursor from "@/components/ui/CustomCursor";
-import ThreeDScrollBackground from "@/components/ui/ThreeDScrollBackground";
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
 
 const inter = Inter({
@@ -29,6 +28,12 @@ import { constructMetadata, getLocalBusinessSchema } from "@/lib/seo";
 import ChatWidget from "@/components/layout/ChatWidget";
 import ThemeCustomizer from "@/components/layout/ThemeCustomizer";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata = constructMetadata();
 
 export default function RootLayout({
@@ -37,9 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
-        className={`${inter.variable} ${outfit.variable} ${jakarta.variable} antialiased`}
+        className={`${inter.variable} ${outfit.variable} ${jakarta.variable} antialiased overflow-x-hidden relative`}
       >
         <CustomCursor />
         <script
@@ -55,10 +60,11 @@ export default function RootLayout({
         >
           <AuthProvider>
             <SmoothScroll>
-              <ThreeDScrollBackground />
-              {children}
-              <ChatWidget />
-              <ThemeCustomizer />
+              <div className="relative w-full overflow-hidden flex flex-col min-h-screen">
+                {children}
+                <ChatWidget />
+                <ThemeCustomizer />
+              </div>
             </SmoothScroll>
           </AuthProvider>
         </ThemeProvider>

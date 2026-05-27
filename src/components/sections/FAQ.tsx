@@ -7,49 +7,53 @@ import Script from "next/script";
 
 const faqs = [
   {
-    category: "Pricing & Bookings",
+    category: "Royal Palaces & Forts",
     questions: [
       {
-        q: "How do you calculate pricing for outstation taxi trips?",
-        a: "Outstation trips are calculated based on a minimum of 250 KM per day. The total fare includes the per KM rate of your chosen vehicle plus a daily driver allowance (₹300/day). Tolls, parking, and state taxes are paid by the customer as per actual receipts."
+        q: "What is the significance of the City Palace?",
+        a: "Towering over Lake Pichola, the City Palace is a magnificent architectural marvel and the largest palace complex in Rajasthan. Built over 400 years by several rulers of the Mewar dynasty, it offers stunning views, intricate mirror work, and a deep dive into the royal history of Udaipur."
       },
       {
-        q: "Do I need to pay an advance to confirm my booking?",
-        a: "Yes, we require a nominal 20-25% advance payment to block the vehicle and allocate a driver for your dates. The remaining balance can be settled directly with the driver during or at the end of your trip."
+        q: "Is Sajjangarh (Monsoon Palace) worth visiting?",
+        a: "Absolutely! Perched high on the Aravalli Hills, the Monsoon Palace was built to watch monsoon clouds. It offers the most spectacular, panoramic sunset views of Udaipur city and its lakes. The surrounding Sajjangarh Wildlife Sanctuary is also a treat for nature lovers."
       },
       {
-        q: "What is your cancellation and refund policy?",
-        a: "Cancellations made 48 hours prior to the journey are eligible for a full refund of the advance amount. For cancellations within 24 hours, the advance payment is retained as a late cancellation fee to compensate the driver."
+        q: "How far is Kumbhalgarh Fort and why is it famous?",
+        a: "Located about 85 KM from Udaipur, Kumbhalgarh Fort is a UNESCO World Heritage Site. It is globally renowned for its massive fortress wall, which extends for 36 kilometers, making it the second-longest continuous wall in the world after the Great Wall of China."
       }
     ]
   },
   {
-    category: "Services & Fleet",
+    category: "Iconic Lakes & Islands",
     questions: [
       {
-        q: "Do you provide airport pickup and drop services at unusual hours?",
-        a: "Absolutely. We offer 24/7 airport transfers to and from Maharana Pratap Airport (Udaipur). We monitor flight schedules so your driver will be waiting for you even if your flight is delayed."
+        q: "What makes Lake Pichola so special?",
+        a: "Lake Pichola is the crown jewel of Udaipur. It is an artificial fresh water lake created in the year 1362 AD. Taking a sunset boat ride on Lake Pichola while admiring the City Palace, Jag Mandir, and the Taj Lake Palace floating on the water is an unforgettable experience."
       },
       {
-        q: "Can I book multiple vehicles for a destination wedding?",
-        a: "Yes, wedding and event transportation is our specialty. We can provide a coordinated fleet of luxury sedans, Innova Crystas, and Tempo Travellers, complete with a dedicated on-ground coordinator for seamless guest movement."
+        q: "What can we do at Fateh Sagar Lake?",
+        a: "Fateh Sagar is a vibrant artificial lake surrounded by hills and woods. You can enjoy speed boating, visit the solar observatory on one of its islands, or simply take a leisurely evening walk along the beautiful Fateh Sagar Paal (promenade) while enjoying local street food."
       },
       {
-        q: "Are your vehicles sanitized and safe?",
-        a: "Safety and hygiene are our top priorities. Every vehicle is thoroughly deep-cleaned and sanitized before dispatch. Our vehicles are commercially registered, fully insured, and equipped with first-aid kits."
+        q: "What is Jag Mandir Island Palace?",
+        a: "Jag Mandir, also known as the 'Lake Garden Palace', is built on an island in Lake Pichola. It is famous for its stunning marble elephants, intricate architecture, and beautiful gardens. It famously inspired Emperor Shah Jahan in the design of the Taj Mahal."
       }
     ]
   },
   {
-    category: "Corporate Travel",
+    category: "Culture & Nature Attractions",
     questions: [
       {
-        q: "Do you offer post-paid billing for corporate clients?",
-        a: "Yes, we offer custom monthly invoicing and post-paid corporate accounts for registered businesses with regular travel needs. Please contact our corporate sales team to set up an account."
+        q: "Why is Saheliyon-ki-Bari famous?",
+        a: "Also known as the 'Garden of the Maidens', this beautiful garden was built by Maharana Sangram Singh for the 48 young women attendants who accompanied a princess to Udaipur as part of her dowry. It features lush green lawns, marble art, and stunning rain-fountains that operate without mechanical pumps."
       },
       {
-        q: "Are your chauffeurs trained for corporate executive travel?",
-        a: "Our corporate chauffeurs are specially trained in executive etiquette. They are punctual, discreet, and well-versed in the fastest routes, ensuring your business executives and VIP clients experience a flawless ride."
+        q: "Where can we experience traditional Rajasthani culture?",
+        a: "Bagore Ki Haveli, located at Gangaur Ghat, is the best place to experience local culture. Every evening, they host 'Dharohar', an energetic and colorful Rajasthani folk dance and puppet show. Shilpgram, an arts and crafts village on the outskirts, is also fantastic for traditional handicrafts."
+      },
+      {
+        q: "Are there any famous temples in Udaipur?",
+        a: "Yes, the Jagdish Temple, located just outside the City Palace, is a massive 17th-century Hindu temple dedicated to Lord Vishnu. It is famous for its intricately carved pillars, beautifully sculpted ceilings, and stunning Indo-Aryan architecture."
       }
     ]
   }
@@ -87,12 +91,12 @@ export default function FAQ() {
       <div className="container mx-auto px-6 max-w-4xl">
         
         <div className="text-center mb-16 px-4">
-          <span className="text-gold-premium font-bold uppercase tracking-[0.2em] text-[10px]">Clear & Transparent</span>
+          <span className="text-gold-premium font-bold uppercase tracking-[0.2em] text-[10px]">Explore The City of Lakes</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6 tracking-tight uppercase leading-[0.95]">
-            Frequently Asked Questions.
+            Top Attractions in Udaipur.
           </h2>
           <p className="text-base md:text-lg text-slate-600 leading-relaxed font-light">
-            Everything you need to know about our taxi services, billing, and booking process. Honest answers to help you plan your Udaipur trip perfectly.
+            Discover the most beautiful locations, royal palaces, and serene lakes that make Udaipur the Venice of the East. Let us drive you to these magical destinations.
           </p>
         </div>
 
@@ -143,21 +147,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Bottom Achievement Bar */}
-        <div className="mt-20 pt-10 border-t border-slate-200 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-           <div className="flex items-center gap-3">
-              <Award className="w-6 h-6 text-gold-premium" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]">Government Approved Agency</span>
-           </div>
-           <div className="flex items-center gap-3">
-              <History className="w-6 h-6 text-gold-premium" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]">Serving Since 2012</span>
-           </div>
-           <div className="flex items-center gap-3">
-              <ShieldCheck className="w-6 h-6 text-gold-premium" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]">Safe Travel Certified</span>
-           </div>
-        </div>
+
 
         <div className="mt-16 bg-slate-900 rounded-[2rem] p-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
            <div>

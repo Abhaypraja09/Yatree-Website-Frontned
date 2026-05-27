@@ -20,8 +20,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Book Now", href: "/booking" },
-    { name: "Corporate", href: "/corporate-travel-udaipur" },
+    { name: "Book Now", href: "/booking/car" },
+    { name: "MICE", href: "/corporate-travel-udaipur" },
     { name: "Explore Udaipur", href: "/explore-udaipur" },
     { name: "Contact", href: "/contact" }
   ];
@@ -71,11 +71,6 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-4">
-             <a href="tel:+917627013579" className={`hidden xl:flex items-center gap-2 font-bold transition-colors ${isSolid ? "text-midnight" : "text-white"}`}>
-                <Phone className="w-4 h-4 text-gold-premium" />
-                <span className="text-sm">+91 76270 13579</span>
-             </a>
-
              <button 
                aria-label="Toggle Menu"
                className={`lg:hidden w-10 h-10 flex items-center justify-center transition-colors ${isSolid ? "text-midnight" : "text-white"}`}
@@ -157,8 +152,8 @@ export default function Navbar() {
                          <Phone className="w-6 h-6" />
                        </div>
                        <div className="flex flex-col">
-                         <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-none mb-1">Call Concierge</span>
-                         <span className="text-xl font-black tracking-tight">+91 76270 13579</span>
+                         <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-none mb-1">24/7 Support</span>
+                         <span className="text-xl font-black tracking-tight">Call Now</span>
                        </div>
                      </a>
                   </div>

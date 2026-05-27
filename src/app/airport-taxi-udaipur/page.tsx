@@ -124,7 +124,7 @@ export default function AirportTaxiPage() {
                           </div>
                        </div>
                        <a href="tel:+917627013579" className="w-full bg-orange-500 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-xs mt-10 block hover:bg-orange-600 transition-colors">
-                          Call +91 76270 13579
+                          Call Now
                        </a>
                     </div>
 

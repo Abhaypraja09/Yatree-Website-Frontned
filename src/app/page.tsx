@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/PremiumHero";
 import DetailedAbout from "@/components/sections/DetailedAbout";
 import { Reveal } from "@/components/ui/Reveal";
-import ThreeDScrollWrapper from "@/components/ui/ThreeDScrollWrapper";
+import CartoonCar from "@/components/ui/CartoonCar";
 import { Phone, MessageCircle } from "lucide-react";
 
 // Dynamic imports for below-the-fold components to improve initial load speed
@@ -14,26 +14,16 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true }
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-transparent selection:bg-gold-premium selection:text-midnight pb-16 md:pb-0">
+    <main className="relative min-h-screen bg-transparent selection:bg-gold-premium selection:text-midnight pb-16 md:pb-0 overflow-x-hidden">
       {/* 1. Navigation & Hero - Critical for LCP */}
+      <CartoonCar />
       <Navbar />
       <Hero />
 
-      <ThreeDScrollWrapper>
-        <DetailedAbout />
-      </ThreeDScrollWrapper>
-
-      <ThreeDScrollWrapper>
-        <WhyChooseUs />
-      </ThreeDScrollWrapper>
-      
-      <ThreeDScrollWrapper>
-        <Testimonials />
-      </ThreeDScrollWrapper>
-
-      <ThreeDScrollWrapper>
-        <FAQ />
-      </ThreeDScrollWrapper>
+      <DetailedAbout />
+      <WhyChooseUs />
+      <Testimonials />
+      <FAQ />
 
       <Footer />
 

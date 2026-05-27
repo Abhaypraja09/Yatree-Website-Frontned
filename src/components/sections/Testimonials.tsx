@@ -1,256 +1,176 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star, Quote, CheckCircle2, MessageSquarePlus, X, Loader2 } from "lucide-react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
+
+const REVIEWS = [
+  {
+    id: 1,
+    name: "Arjun Bhat",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Arjun+Bhat&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Excellent service! The car was pristine and the journey was very smooth. Best luxury cab service in Udaipur."
+  },
+  {
+    id: 2,
+    name: "Puja Maskara",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Puja+Maskara&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "We recently used their cab services for Rajasthan trip. The driver was polite and very helpful. Car was clean. Our journey was totally hassle free."
+  },
+  {
+    id: 3,
+    name: "Rahul Sagarkar",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Rahul+Sagarkar&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Nice service. Very punctual and professional. The premium feel of the vehicles really enhanced our Udaipur trip."
+  },
+  {
+    id: 4,
+    name: "Sneha Patel",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Sneha+Patel&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Amazing experience! The chauffeur was practically a local guide. Highly recommend their fleet for sightseeing around the city."
+  },
+  {
+    id: 5,
+    name: "Vikram Singh",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Vikram+Singh&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Best luxury travel partner in Udaipur. The booking process was seamless and the journey exceeded expectations."
+  },
+  {
+    id: 6,
+    name: "Meera Desai",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Meera+Desai&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Loved the Green Ride e-rickshaw service! It was so convenient for navigating the narrow lanes of Udaipur's old city. Very eco-friendly and safe."
+  },
+  {
+    id: 7,
+    name: "Rajesh Kumar",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Rajesh+Kumar&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "The drivers are extremely polite, cooperative, and have great knowledge about Udaipur's routes. Made our family trip totally stress-free."
+  },
+  {
+    id: 8,
+    name: "Anita Sharma",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Anita+Sharma&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Highly reliable and professional. Vehicles were impeccably clean and well-maintained. Would definitely book again for my next Rajasthan tour."
+  },
+  {
+    id: 9,
+    name: "Karan Mehta",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Karan+Mehta&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Prompt and hassle-free airport transfer. The premium car felt brand new and the chauffeur arrived exactly on time. 5-star service!"
+  },
+  {
+    id: 10,
+    name: "Dr. Anjali Verma",
+    role: "Verified Client",
+    image: "https://ui-avatars.com/api/?name=Dr.+Anjali+Verma&background=e0f2fe&color=0284c7&size=150&bold=true",
+    text: "Used their tempo traveller for a large group. Extremely spacious and comfortable. They follow standard, professional procedures perfectly."
+  }
+];
 
 export default function Testimonials() {
-  const [reviews, setReviews] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ name: "", rating: 5, text: "" });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
+  const [activeIndex, setActiveIndex] = useState(1);
 
+  // Auto-play
   useEffect(() => {
-    fetchReviews();
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % REVIEWS.length);
+    }, 4000);
+    return () => clearInterval(timer);
   }, []);
 
-  const fetchReviews = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/api/reviews");
-      const data = await res.json();
-      if (data.status === "success") {
-        setReviews(data.data.reviews);
-      }
-    } catch (error) {
-      console.error("Error fetching reviews", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setSubmitMessage("");
-    try {
-      const res = await fetch("http://localhost:5000/api/reviews", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-      const data = await res.json();
-      if (data.status === "success") {
-        setSubmitMessage("Thank you! Your review has been published.");
-        setReviews([data.data.review, ...reviews]);
-        setFormData({ name: "", rating: 5, text: "" });
-        setTimeout(() => {
-          setShowForm(false);
-          setSubmitMessage("");
-        }, 3000);
-      } else {
-         setSubmitMessage(data.message || "Something went wrong.");
-      }
-    } catch (error) {
-      setSubmitMessage("Error submitting review. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-IN', options);
-  };
-
   return (
-    <section className="py-32 bg-slate-900 relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-b from-[#eef2f6] to-[#f8fafc] relative overflow-hidden font-sans">
       <div className="container mx-auto px-6 relative z-10">
         
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
-           
-           <motion.div 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="lg:w-1/3 text-center lg:text-left sticky top-24"
-           >
-              <span className="text-gold-premium font-bold uppercase tracking-[0.2em] text-xs">Verified Trust</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-2 mb-6 tracking-tight">
-                Client Testimonials.
-              </h2>
-              <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                Don't just take our word for it. See what our esteemed clients have to say about our luxury transportation services. 
-              </p>
+        {/* Header */}
+        <div className="text-center mb-24">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+            Client Testimonials
+          </h2>
+          <p className="text-slate-500 font-medium text-lg">
+             What our esteemed clients say about us
+          </p>
+        </div>
 
-              <div className="inline-flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 mb-8">
-                 <div className="flex -space-x-4">
-                    {[1,2,3,4].map((i) => (
-                      <div key={i} className="w-12 h-12 rounded-full border-2 border-slate-900 overflow-hidden relative">
-                         <Image 
-                           src={`https://i.pravatar.cc/100?img=${i+10}`} 
-                           alt="User" 
-                           fill 
-                           sizes="48px"
-                           className="object-cover" 
-                           loading="lazy"
-                           quality={60}
-                         />
-                      </div>
-                    ))}
+        {/* 3D Carousel Container */}
+        <div className="relative w-full max-w-6xl mx-auto h-[350px] flex items-center justify-center perspective-[1200px]">
+           {REVIEWS.map((review, i) => {
+             // Calculate circular offset
+             let offset = i - activeIndex;
+             if (offset < -Math.floor(REVIEWS.length / 2)) offset += REVIEWS.length;
+             if (offset > Math.floor(REVIEWS.length / 2)) offset -= REVIEWS.length;
+
+             const isActive = offset === 0;
+             const isLeft = offset === -1;
+             const isRight = offset === 1;
+             
+             // Hide cards that are too far
+             if (Math.abs(offset) > 1) return null;
+
+             return (
+               <motion.div
+                 key={review.id}
+                 initial={false}
+                 animate={{
+                   x: isActive ? "0%" : isLeft ? "-70%" : "70%",
+                   scale: isActive ? 1.05 : 0.85,
+                   opacity: isActive ? 1 : 0.5,
+                   zIndex: isActive ? 30 : 10,
+                   rotateY: isActive ? 0 : isLeft ? 10 : -10,
+                 }}
+                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                 className={`absolute w-[90%] max-w-[400px] bg-white rounded-3xl pt-16 pb-10 px-8 shadow-[0_20px_50px_rgba(0,0,0,0.08)] flex flex-col items-center text-center border-t-[6px] border-transparent ${
+                   isActive ? "cursor-default border-t-[#0ea5e9]" : "cursor-pointer hover:opacity-70"
+                 }`}
+                 onClick={() => {
+                   if (!isActive) setActiveIndex(i);
+                 }}
+               >
+                 {/* Avatar (Half outside the top of the card) */}
+                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-[6px] border-[#eef2f6] shadow-xl overflow-hidden bg-white">
+                   <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
                  </div>
-                 <div className="text-left">
-                    <div className="flex gap-1 mb-1">
-                       {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-gold-premium text-gold-premium" />)}
-                    </div>
-                    <span className="text-white font-bold text-sm">4.9/5 Average Rating</span>
+                 
+                 {/* Content */}
+                 <h3 className="text-xl font-black text-[#0ea5e9] mb-1">{review.name}</h3>
+                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">{review.role}</p>
+                 
+                 <p className="text-slate-500 font-medium leading-relaxed text-sm">
+                   "{review.text}"
+                 </p>
+                 
+                 <div className="flex gap-1 mt-6">
+                    {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-[#fbbf24] text-[#fbbf24]" />)}
                  </div>
-              </div>
+               </motion.div>
+             );
+           })}
+        </div>
 
-              <div>
-                 <button 
-                   onClick={() => setShowForm(!showForm)}
-                   className="w-full sm:w-auto px-8 py-4 bg-gold-premium text-midnight font-black uppercase tracking-widest text-sm rounded-full flex items-center justify-center gap-3 hover:bg-white transition-colors"
-                 >
-                   <MessageSquarePlus className="w-5 h-5" />
-                   {showForm ? "Cancel Review" : "Write a Review"}
-                 </button>
-              </div>
-           </motion.div>
-
-           <div className="lg:w-2/3 w-full">
-              
-              <AnimatePresence>
-                 {showForm && (
-                   <motion.div 
-                     initial={{ opacity: 0, height: 0, y: -20 }}
-                     animate={{ opacity: 1, height: "auto", y: 0 }}
-                     exit={{ opacity: 0, height: 0, y: -20 }}
-                     className="mb-10 overflow-hidden"
-                   >
-                      <div className="bg-white rounded-[2rem] p-8 shadow-2xl relative">
-                         <button onClick={() => setShowForm(false)} className="absolute top-6 right-6 text-slate-400 hover:text-slate-900"><X className="w-6 h-6"/></button>
-                         <h3 className="text-2xl font-black text-slate-900 mb-6">Share Your Experience</h3>
-                         
-                         <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                               <label className="block text-sm font-bold text-slate-700 mb-2">Your Name</label>
-                               <input 
-                                 type="text" 
-                                 required
-                                 value={formData.name}
-                                 onChange={(e) => setFormData({...formData, name: e.target.value})}
-                                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-gold-premium focus:ring-1 focus:ring-gold-premium transition-all"
-                                 placeholder="e.g. Shivaani Bhambure"
-                               />
-                            </div>
-                            
-                            <div>
-                               <label className="block text-sm font-bold text-slate-700 mb-2">Rating</label>
-                               <div className="flex gap-2">
-                                  {[1,2,3,4,5].map((star) => (
-                                     <button 
-                                        key={star}
-                                        type="button"
-                                        onClick={() => setFormData({...formData, rating: star})}
-                                        className="focus:outline-none"
-                                     >
-                                        <Star className={`w-8 h-8 ${formData.rating >= star ? 'fill-gold-premium text-gold-premium' : 'text-slate-300'}`} />
-                                     </button>
-                                  ))}
-                               </div>
-                            </div>
-
-                            <div>
-                               <label className="block text-sm font-bold text-slate-700 mb-2">Your Review</label>
-                               <textarea 
-                                 required
-                                 rows={4}
-                                 value={formData.text}
-                                 onChange={(e) => setFormData({...formData, text: e.target.value})}
-                                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-gold-premium focus:ring-1 focus:ring-gold-premium transition-all"
-                                 placeholder="Tell us about your ride experience..."
-                               ></textarea>
-                            </div>
-
-                            {submitMessage && (
-                               <div className={`p-4 rounded-xl text-sm font-bold ${submitMessage.includes('Thank') ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
-                                  {submitMessage}
-                               </div>
-                            )}
-
-                            <button 
-                               type="submit" 
-                               disabled={submitting}
-                               className="w-full bg-slate-900 text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold-premium hover:text-midnight transition-colors flex justify-center items-center gap-2 disabled:opacity-70"
-                            >
-                               {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "Post Review"}
-                            </button>
-                         </form>
-                      </div>
-                   </motion.div>
-                 )}
-              </AnimatePresence>
-
-              {loading ? (
-                <div className="flex justify-center items-center py-20">
-                   <Loader2 className="w-10 h-10 text-gold-premium animate-spin" />
-                </div>
-              ) : reviews.length === 0 ? (
-                <div className="text-center py-20">
-                   <p className="text-slate-400 text-lg">No reviews yet. Be the first to share your experience!</p>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                   {reviews.map((review, index) => (
-                      <motion.div 
-                        key={review._id || index} 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-                        className={`bg-white p-6 sm:p-8 rounded-[2rem] shadow-xl ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
-                      >
-                         <div className="flex justify-between items-start mb-6">
-                            <div className="flex items-center gap-3">
-                               {review.avatar ? (
-                                 <div className="w-12 h-12 rounded-full overflow-hidden relative border border-slate-100">
-                                   <Image src={review.avatar} alt={review.name} fill sizes="48px" className="object-cover" />
-                                 </div>
-                               ) : (
-                                 <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-black text-slate-900 text-xl uppercase">
-                                    {review.name.charAt(0)}
-                                 </div>
-                               )}
-                               <div>
-                                  <h4 className="font-bold text-slate-900 leading-tight capitalize">{review.name}</h4>
-                                  <span className="text-xs text-slate-500">{formatDate(review.createdAt)}</span>
-                               </div>
-                            </div>
-                            <Quote className="w-8 h-8 text-slate-100" />
-                         </div>
-                         
-                         <div className="flex gap-1 mb-4">
-                            {[...Array(review.rating || 5)].map((_, i) => (
-                               <Star key={i} className="w-4 h-4 fill-gold-premium text-gold-premium" />
-                            ))}
-                         </div>
-
-                         <p className="text-slate-600 text-sm leading-relaxed mb-6">"{review.text}"</p>
-
-                         <div className="flex items-center gap-2 border-t border-slate-100 pt-4">
-                            <CheckCircle2 className="w-4 h-4 text-green-500" />
-                            <span className="text-xs font-bold text-slate-400">Verified Customer</span>
-                         </div>
-                      </motion.div>
-                   ))}
-                </div>
-              )}
-           </div>
-
+        {/* Navigation Dots */}
+        <div className="flex justify-center items-center gap-3 mt-16">
+          {REVIEWS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                i === activeIndex 
+                ? "bg-[#0ea5e9] w-8" 
+                : "bg-[#0ea5e9]/30 hover:bg-[#0ea5e9]/60"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
 
       </div>

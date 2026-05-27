@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-widest text-xs">24/7 Dispatch Center</h4>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4 font-light">Available for urgent bookings and support.</p>
-                  <a href="tel:+917627013579" className="font-black text-slate-900 text-xl hover:text-primary transition-colors tracking-tighter">+91 76270 13579</a>
+                  <a href="tel:+917627013579" className="font-black text-slate-900 text-xl hover:text-primary transition-colors tracking-tighter">Call Now</a>
                 </div>
               </div>
 

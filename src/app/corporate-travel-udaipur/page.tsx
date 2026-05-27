@@ -43,22 +43,34 @@ interface Vehicle {
 
 const VEHICLES: Vehicle[] = [
   {
-    id: "innova-crysta",
-    name: "Toyota Innova Crysta",
+    id: "maruti-dzire",
+    name: "Maruti Suzuki Dzire",
     type: "car",
-    tag: "RECOMMENDED • SUV",
-    image: "/innova.png",
-    description: "The gold standard of luxury travel in India. Extremely spacious, unmatched comfort, and a flawless premium ride. Custom YATREE plates.",
-    seats: "7 Seater",
-    luggage: "4 Bags",
+    tag: "SEDAN",
+    image: "/dzire.png",
+    description: "Compact, highly economical, and perfect for navigating narrow palace streets. Custom YATREE plates.",
+    seats: "4 Seater",
+    luggage: "2 Bags",
     ac: true,
-    features: ["Plush Captain Seats", "Dual Zone AC", "Premium Audio System", "VIP YATREE Plates"]
+    features: ["Exceptional Fuel Mileage", "Compact & Agile", "Good Trunk", "VIP YATREE Plates"]
+  },
+  {
+    id: "maruti-ciaz",
+    name: "Maruti Suzuki Ciaz",
+    type: "car",
+    tag: "PREMIUM SEDAN",
+    image: "/etios.png", 
+    description: "Premium sedan offering a smooth and spacious ride for comfortable city and highway travel. Custom YATREE plates.",
+    seats: "4 Seater",
+    luggage: "3 Bags",
+    ac: true,
+    features: ["Spacious Legroom", "Premium Interiors", "High AC Comfort", "VIP YATREE Plates"]
   },
   {
     id: "toyota-etios",
     name: "Toyota Etios",
     type: "car",
-    tag: "BEST SELLER • SEDAN",
+    tag: "SEDAN",
     image: "/etios.png",
     description: "Extremely comfortable and reliable sedan offering a smooth ride and deep boot storage for highway journeys. Custom YATREE plates.",
     seats: "4 Seater",
@@ -67,76 +79,100 @@ const VEHICLES: Vehicle[] = [
     features: ["Deep Boot Space", "Premium Suspension", "High AC Comfort", "VIP YATREE Plates"]
   },
   {
-    id: "maruti-dzire",
-    name: "Maruti Suzuki Dzire",
+    id: "toyota-innova",
+    name: "Toyota Innova",
     type: "car",
-    tag: "POPULAR TAXI • SEDAN",
-    image: "/dzire.png",
-    description: "The classic Indian sightseeing taxi. Compact, highly economical, and perfect for navigating narrow palace streets. Custom YATREE plates.",
-    seats: "4 Seater",
-    luggage: "2 Bags",
+    tag: "SUV",
+    image: "/innova.png",
+    description: "The classic Indian luxury SUV for family travel. Spacious, reliable, and comfortable. Custom YATREE plates.",
+    seats: "7 Seater",
+    luggage: "4 Bags",
     ac: true,
-    features: ["Exceptional Fuel Mileage", "Compact & Agile", "Good Trunk", "VIP YATREE Plates"]
+    features: ["Family SUV", "Spacious Cabin", "Rear AC", "VIP YATREE Plates"]
   },
   {
-    id: "vw-vento",
-    name: "Volkswagen Vento",
+    id: "innova-crysta",
+    name: "Toyota Innova Crysta",
     type: "car",
-    tag: "EXECUTIVE CLASS • SEDAN",
-    image: "/vento.png",
-    description: "European luxury meets power. Perfect executive choice for corporate travels and premium outstation trips. Custom YATREE plates.",
-    seats: "4 Seater",
-    luggage: "3 Bags",
+    tag: "PREMIUM SUV",
+    image: "/innova.png",
+    description: "The gold standard of luxury travel in India. Extremely spacious, unmatched comfort, and a flawless premium ride. Custom YATREE plates.",
+    seats: "7 Seater",
+    luggage: "4 Bags",
     ac: true,
-    features: ["High-End Cabin Safety", "German Engineering", "Leatherette Seats", "VIP YATREE Plates"]
+    features: ["Plush Captain Seats", "Dual Zone AC", "Premium Audio System", "VIP YATREE Plates"]
   },
   {
-    id: "force-traveller-12",
-    name: "Force Traveller (12 Seats)",
+    id: "innova-hycross",
+    name: "Toyota Innova Hycross",
+    type: "car",
+    tag: "HYBRID SUV",
+    image: "/innova.png",
+    description: "Advanced hybrid SUV with unmatched comfort, silence, and panoramic views. Custom YATREE plates.",
+    seats: "7 Seater",
+    luggage: "4 Bags",
+    ac: true,
+    features: ["Hybrid Engine", "Panoramic Sunroof", "Ultra Premium", "VIP YATREE Plates"]
+  },
+  {
+    id: "force-traveller",
+    name: "Force Traveller",
     type: "bus",
-    tag: "POPULAR • TEMPO",
+    tag: "TEMPO",
     image: "/tempo.png",
-    description: "Spacious luxury minibus designed specifically for mid-sized family groups touring Rajasthan. Custom YATREE plates.",
-    seats: "12 Seater",
-    luggage: "10 Bags",
+    description: "Spacious luxury minibus designed specifically for family groups touring Rajasthan. Custom YATREE plates.",
+    seats: "12 to 17 Seater",
+    luggage: "10-15 Bags",
     ac: true,
     features: ["Pushback Seats", "Dual Roof Blowers", "LED Screen", "VIP YATREE Plates"]
   },
   {
-    id: "force-traveller-17",
-    name: "Force Traveller (17 Seats)",
+    id: "volvo-21",
+    name: "Volvo Bus (21 Seater)",
     type: "bus",
-    tag: "GROUP TOURER • TEMPO",
-    image: "/traveller-17.png",
-    description: "Extended chassis Force traveller for larger tourist delegations. Ample shoulder-room and heavy capacity A/C. Custom YATREE plates.",
-    seats: "17 Seater",
+    tag: "VOLVO AC COACH",
+    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
+    description: "Premium Volvo coach for mid-size groups. Smooth air suspension and reclining seats. Custom YATREE plates.",
+    seats: "21 Seater",
     luggage: "15 Bags",
     ac: true,
-    features: ["Extended Legroom", "Roof Cargo Rack", "Premium Audio", "VIP YATREE Plates"]
+    features: ["Air Suspension", "Reclining Seats", "High Capacity A/C", "VIP YATREE Plates"]
   },
   {
-    id: "coach-bus-35",
-    name: "Luxury AC Coach (35 Seater)",
+    id: "volvo-27",
+    name: "Volvo Bus (27 Seater)",
     type: "bus",
-    tag: "AASHAPURA CLASS • AC COACH",
+    tag: "VOLVO AC COACH",
     image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
-    description: "Premium mid-size guest shuttle coach. Equipped with high-capacity air conditioning and panoramic glass. Custom YATREE plates.",
-    seats: "35 Seater",
-    luggage: "30 Bags",
+    description: "Luxury Volvo coach for group travel. Unmatched comfort for intercity Rajasthan tours. Custom YATREE plates.",
+    seats: "27 Seater",
+    luggage: "20 Bags",
     ac: true,
-    features: ["Panoramic Windows", "High Capacity A/C", "Underdeck Storage", "VIP YATREE Plates"]
+    features: ["Air Suspension", "Panoramic Windows", "Underdeck Storage", "VIP YATREE Plates"]
   },
   {
-    id: "coach-bus-50",
-    name: "Grand AC Coach (50 Seater)",
+    id: "volvo-35",
+    name: "Volvo Bus (35 Seater)",
     type: "bus",
-    tag: "AASHAPURA GRAND • HEAVY BUS",
-    image: "https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=600&q=80",
-    description: "Grand passenger cruiser from Aashapura portfolio. Ideal for massive destination weddings, events, and tours. Custom YATREE plates.",
-    seats: "50 Seater",
-    luggage: "45 Bags",
+    tag: "VOLVO AC COACH",
+    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
+    description: "Spacious Volvo coach offering premium amenities for large wedding groups and corporate events. Custom YATREE plates.",
+    seats: "35 Seater",
+    luggage: "25 Bags",
     ac: true,
-    features: ["Heavy Suspensions", "PA Mic System", "Deep Cargo Bay", "VIP YATREE Plates"]
+    features: ["Air Suspension", "Reclining Seats", "Premium Audio", "VIP YATREE Plates"]
+  },
+  {
+    id: "volvo-45",
+    name: "Volvo Bus (45 Seater)",
+    type: "bus",
+    tag: "VOLVO GRAND COACH",
+    image: "https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=600&q=80",
+    description: "Grand Volvo passenger cruiser. Ideal for massive destination weddings and heavy corporate tours. Custom YATREE plates.",
+    seats: "45 Seater",
+    luggage: "35 Bags",
+    ac: true,
+    features: ["Heavy Air Suspension", "PA Mic System", "Deep Cargo Bay", "VIP YATREE Plates"]
   }
 ];
 
@@ -226,7 +262,7 @@ function CorporateBookingEngine() {
         {/* Luminous Title Block */}
         <div className="text-center mb-12">
           <span className="text-gold-premium font-bold uppercase tracking-[0.25em] text-xs mb-3 block">Corporate Fleet Showcase</span>
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight uppercase leading-none">Select Showroom Fleet</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight uppercase leading-none">Our Premium Fleet</h2>
           <p className="text-slate-500 mt-3 text-xs md:text-sm font-medium">Click "Reserve Priority Ride" to request custom corporate tariffs with VIP YATREE plates.</p>
         </div>
 
@@ -272,7 +308,7 @@ function CorporateBookingEngine() {
                   <img 
                     src={vehicle.image} 
                     alt={vehicle.name} 
-                    className="w-[95%] h-[90%] object-contain relative z-10 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply" 
+                    className="w-full h-full object-contain scale-[1.15] mix-blend-multiply relative z-10 transition-transform duration-500 group-hover:scale-[1.25]" 
                   />
 
                   {/* Premium Badge tag */}
@@ -367,8 +403,8 @@ function CorporateBookingEngine() {
                 </div>
 
                 {/* Large Showroom vehicle display */}
-                <div className="my-8 relative h-36 w-full flex items-center justify-center">
-                  <img src={selectedVehicle.image} alt={selectedVehicle.name} className="max-w-full max-h-full object-contain relative z-10 mix-blend-multiply" />
+                <div className="my-8 relative h-48 w-full flex items-center justify-center">
+                  <img src={selectedVehicle.image} alt={selectedVehicle.name} className="w-full h-full object-contain scale-110 mix-blend-multiply relative z-10" />
                 </div>
 
                 {/* Showroom Specs */}

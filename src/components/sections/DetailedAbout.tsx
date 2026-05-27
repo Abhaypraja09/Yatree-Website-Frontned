@@ -93,7 +93,7 @@ export default function DetailedAbout() {
               className="space-y-6 text-slate-600 text-lg leading-relaxed font-light"
             >
               <p className="font-bold text-midnight">
-                Yatree Destination Private Limited is a premier travel company based in Udaipur, Rajasthan, dedicated to providing unparalleled travel experiences.
+                We are a premier travel company based in Udaipur, Rajasthan, dedicated to providing unparalleled travel experiences.
               </p>
               <p>
                 With a fleet comprising 13 luxury cars and eco-friendly E-rickshaws, we specialize in crafting comfortable and unique tours that define the spirit of Rajasthan.
@@ -129,7 +129,7 @@ export default function DetailedAbout() {
           <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
             <div className="p-12 md:p-20 space-y-8 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-premium/10 text-gold-premium border border-gold-premium/20 text-[10px] font-black uppercase tracking-widest w-fit">
-                <ShieldCheck className="w-4 h-4" /> Signature Fleet
+                <ShieldCheck className="w-4 h-4" /> Exclusive Fleet
               </div>
               <KineticTitle 
                 text="OUR EXCLUSIVE BRANDED FLEET."
@@ -140,7 +140,7 @@ export default function DetailedAbout() {
                 Travel with pride in our Yatree-branded signature vehicles. Easily recognizable with our distinctive logo, impeccably maintained, and equipped with top-tier amenities to ensure a prestigious journey across Udaipur.
               </p>
               <div className="pt-6">
-                <Link href="/contact" className="flex items-center gap-4 text-white font-black uppercase tracking-[0.2em] text-xs group/link w-fit">
+                <Link href="/booking" className="flex items-center gap-4 text-white font-black uppercase tracking-[0.2em] text-xs group/link w-fit">
                   Book Branded Ride <ArrowRight className="w-5 h-5 text-gold-premium group-hover/link:translate-x-2 transition-transform" />
                 </Link>
               </div>
@@ -161,7 +161,7 @@ export default function DetailedAbout() {
                      <Car className="w-6 h-6 text-midnight" />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm uppercase tracking-wider">Premium Sedan</div>
+                    <div className="text-white font-bold text-sm uppercase tracking-wider">Premium Fleet</div>
                     <div className="text-gold-premium text-xs font-black tracking-widest">Yatree Verified</div>
                   </div>
                </div>
@@ -170,35 +170,38 @@ export default function DetailedAbout() {
         </motion.div>
 
         {/* BOTTOM SECTION: Mission & Values */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-gold-premium font-black uppercase tracking-[0.4em] text-[10px]">The Foundation</span>
-          <KineticTitle 
-            text="OUR MISSION."
-            className="text-5xl md:text-6xl font-black text-midnight mt-4 mb-6 tracking-tighter uppercase justify-center"
-          />
-          <p className="text-lg text-slate-600 font-light leading-relaxed">
-            We redefine the travel experience by providing unparalleled service, fostering sustainable practices, and creating unforgettable memories in the City of Lakes.
-          </p>
-        </div>
+        <div className="relative py-20 px-8 md:px-16 rounded-[3rem] bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 shadow-xl overflow-hidden mb-20">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-premium/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none" />
+          
+          <div className="relative z-10 text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-slate-200 text-gold-premium font-black uppercase tracking-[0.3em] text-[10px] shadow-sm mb-4">The Foundation</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-midnight mb-6 tracking-tighter uppercase">
+              Our Mission.
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 font-light leading-relaxed">
+              We redefine the travel experience by providing unparalleled service, fostering sustainable practices, and creating unforgettable memories in the City of Lakes.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-12 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-gold-premium/30 hover:bg-white transition-all duration-700 group relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gold-premium/5 blur-3xl rounded-full" />
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-10 group-hover:bg-gold-premium group-hover:text-midnight transition-all duration-500 shadow-sm border border-slate-100">
-                {value.icon}
-              </div>
-              <h4 className="text-xl font-bold text-midnight mb-4 uppercase tracking-wider">{value.title}</h4>
-              <p className="text-slate-500 leading-relaxed text-sm font-light">{value.desc}</p>
-            </motion.div>
-          ))}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:border-gold-premium/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold-premium/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold-premium group-hover:text-midnight transition-all duration-500 shadow-sm border border-slate-100 relative z-10">
+                  {value.icon}
+                </div>
+                <h4 className="text-xl font-bold text-midnight mb-4 uppercase tracking-wider relative z-10">{value.title}</h4>
+                <p className="text-slate-500 leading-relaxed text-sm font-light relative z-10">{value.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Final CTA */}
@@ -208,11 +211,21 @@ export default function DetailedAbout() {
           viewport={{ once: true }}
           className="mt-32 p-16 md:p-24 rounded-[3.5rem] bg-midnight text-white relative overflow-hidden text-center border border-white/5"
         >
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute inset-0 z-0 bg-midnight">
+            <Image
+              src="/udaipur_atmospheric_about_bg_1778820777543.png"
+              alt="Udaipur Background"
+              fill
+              className="object-cover opacity-60 mix-blend-luminosity"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-midnight/30 via-transparent to-midnight/80" />
+          </div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
              <div className="absolute top-[-50px] left-[-50px] w-96 h-96 border-[40px] border-gold-premium/20 rounded-full" />
           </div>
           
-          <Sparkles className="w-16 h-16 mx-auto mb-10 text-gold-premium animate-pulse" />
+          <div className="relative z-10">
+            <Sparkles className="w-16 h-16 mx-auto mb-10 text-gold-premium animate-pulse" />
           <KineticTitle 
             text="TRANSFORMING YOUR JOURNEY."
             className="text-3xl sm:text-4xl md:text-7xl font-black mb-10 leading-[0.95] tracking-tighter uppercase justify-center"
@@ -223,6 +236,7 @@ export default function DetailedAbout() {
               Begin Experience
             </Link>
             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Ready for the extraordinary?</p>
+          </div>
           </div>
         </motion.div>
 

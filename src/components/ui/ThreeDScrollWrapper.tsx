@@ -52,7 +52,7 @@ export default function ThreeDScrollWrapper({
         translateZ,
         opacity,
       }}
-      className={`will-change-transform ${className}`}
+      className={`relative will-change-transform ${className}`}
     >
       {children}
     </motion.div>

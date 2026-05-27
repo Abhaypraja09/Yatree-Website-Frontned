@@ -42,10 +42,12 @@ function ParticleHighway({ scrollY }: { scrollY: number }) {
     return arr;
   });
 
-  useFrame((state) => {
+  const elapsedRef = useRef(0);
+  useFrame((state, delta) => {
+    elapsedRef.current += delta;
     if (pointsRef.current) {
       // Base slow rotation
-      pointsRef.current.rotation.y = state.clock.getElapsedTime() * 0.05;
+      pointsRef.current.rotation.y = elapsedRef.current * 0.05;
       
       // Speed up or shift based on scroll
       const targetRotationX = scrollY * 0.0003;
@@ -81,8 +83,10 @@ function FloatingCrystals({ scrollY }: { scrollY: number }) {
   const crystal3 = useRef<THREE.Mesh>(null);
   const { theme } = useTheme();
 
-  useFrame((state) => {
-    const elapsed = state.clock.getElapsedTime();
+  const elapsedRef = useRef(0);
+  useFrame((state, delta) => {
+    elapsedRef.current += delta;
+    const elapsed = elapsedRef.current;
     const scrollFactor = scrollY * 0.001;
 
     // Smooth floating and rotation responding to scroll

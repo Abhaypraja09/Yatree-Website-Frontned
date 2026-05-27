@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import KineticTitle from "../ui/KineticTitle";
 import { ChevronRight, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function PremiumHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,21 +44,15 @@ export default function PremiumHero() {
           style={{ opacity }}
           className="max-w-4xl"
         >
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-premium/20 border border-gold-premium/30 backdrop-blur-md mb-6"
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-8 tracking-tight"
           >
-            <span className="w-2 h-2 rounded-full bg-gold-premium animate-pulse" />
-            <span className="text-[10px] text-gold-premium font-bold uppercase tracking-[0.2em]">The Gold Standard of Travel</span>
-          </motion.div>
-
-          <KineticTitle 
-            text="Experience Udaipur with Unmatched Luxury & Elegance"
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8"
-            stagger={0.08}
-          />
+            Experience Udaipur with <br className="hidden md:block" />
+            <span className="text-gold-premium">Unmatched Luxury</span> & Elegance
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -74,18 +69,18 @@ export default function PremiumHero() {
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             className="flex flex-wrap gap-4"
           >
-            <button className="group relative h-14 px-8 rounded-full overflow-hidden bg-gold-premium text-midnight font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            <Link href="/booking/car" className="group flex items-center justify-center relative h-14 px-8 rounded-full overflow-hidden bg-gold-premium text-midnight font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
               <span className="relative z-10 flex items-center gap-2">
                 Book Your Ride <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </span>
               <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
+            </Link>
             
             <a 
               href="tel:+917627013579"
               className="h-14 px-8 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white/40 active:scale-95"
             >
-              <Phone className="w-4 h-4 text-gold-premium" /> Contact Concierge
+              <Phone className="w-4 h-4 text-gold-premium" /> Contact Us
             </a>
           </motion.div>
         </motion.div>
