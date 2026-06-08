@@ -112,7 +112,7 @@ export default function ChatWidget() {
                 <div className="grid grid-cols-1 gap-3">
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="https://wa.me/91?text=Hi, I want a live video consultation of the cars."
+                    href="https://wa.me/917627013579?text=Hi, I want a live video consultation of the cars."
                     target="_blank"
                     className="flex items-center justify-between p-5 bg-blue-500/5 hover:bg-blue-500/10 border border-blue-500/20 rounded-3xl transition-all group"
                   >
@@ -132,7 +132,7 @@ export default function ChatWidget() {
 
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="https://wa.me/919660953135?text=Hi, I am interested in booking a luxury ride."
+                    href="https://wa.me/917627013579?text=Hi, I am interested in booking a luxury ride."
                     target="_blank"
                     className="flex items-center justify-between p-5 bg-[#25D366]/5 hover:bg-[#25D366]/10 border border-[#25D366]/20 rounded-3xl transition-all group"
                   >

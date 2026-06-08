@@ -84,6 +84,10 @@ export default function FAQ() {
 
   return (
     <section className="py-32 bg-slate-50 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold-premium/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-navy-500/10 blur-[120px] rounded-full pointer-events-none" />

@@ -22,237 +22,17 @@ import {
   Star,
   CheckCircle2,
   FileText,
-  X,
   Building
 } from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { VEHICLES, type Vehicle } from "@/lib/corporateVehicles";
 
-interface Vehicle {
-  id: string;
-  name: string;
-  type: "car" | "bus";
-  tag: string;
-  image: string;
-  description: string;
-  seats: string;
-  luggage: string;
-  ac: boolean;
-  features: string[];
-}
 
-const VEHICLES: Vehicle[] = [
-  {
-    id: "maruti-dzire",
-    name: "Maruti Suzuki Dzire",
-    type: "car",
-    tag: "SEDAN",
-    image: "/dzire.png",
-    description: "Compact, highly economical, and perfect for navigating narrow palace streets. Custom YATREE plates.",
-    seats: "4 Seater",
-    luggage: "2 Bags",
-    ac: true,
-    features: ["Exceptional Fuel Mileage", "Compact & Agile", "Good Trunk", "VIP YATREE Plates"]
-  },
-  {
-    id: "maruti-ciaz",
-    name: "Maruti Suzuki Ciaz",
-    type: "car",
-    tag: "PREMIUM SEDAN",
-    image: "/etios.png", 
-    description: "Premium sedan offering a smooth and spacious ride for comfortable city and highway travel. Custom YATREE plates.",
-    seats: "4 Seater",
-    luggage: "3 Bags",
-    ac: true,
-    features: ["Spacious Legroom", "Premium Interiors", "High AC Comfort", "VIP YATREE Plates"]
-  },
-  {
-    id: "toyota-etios",
-    name: "Toyota Etios",
-    type: "car",
-    tag: "SEDAN",
-    image: "/etios.png",
-    description: "Extremely comfortable and reliable sedan offering a smooth ride and deep boot storage for highway journeys. Custom YATREE plates.",
-    seats: "4 Seater",
-    luggage: "3 Bags",
-    ac: true,
-    features: ["Deep Boot Space", "Premium Suspension", "High AC Comfort", "VIP YATREE Plates"]
-  },
-  {
-    id: "toyota-innova",
-    name: "Toyota Innova",
-    type: "car",
-    tag: "SUV",
-    image: "/innova.png",
-    description: "The classic Indian luxury SUV for family travel. Spacious, reliable, and comfortable. Custom YATREE plates.",
-    seats: "7 Seater",
-    luggage: "4 Bags",
-    ac: true,
-    features: ["Family SUV", "Spacious Cabin", "Rear AC", "VIP YATREE Plates"]
-  },
-  {
-    id: "innova-crysta",
-    name: "Toyota Innova Crysta",
-    type: "car",
-    tag: "PREMIUM SUV",
-    image: "/innova.png",
-    description: "The gold standard of luxury travel in India. Extremely spacious, unmatched comfort, and a flawless premium ride. Custom YATREE plates.",
-    seats: "7 Seater",
-    luggage: "4 Bags",
-    ac: true,
-    features: ["Plush Captain Seats", "Dual Zone AC", "Premium Audio System", "VIP YATREE Plates"]
-  },
-  {
-    id: "innova-hycross",
-    name: "Toyota Innova Hycross",
-    type: "car",
-    tag: "HYBRID SUV",
-    image: "/innova.png",
-    description: "Advanced hybrid SUV with unmatched comfort, silence, and panoramic views. Custom YATREE plates.",
-    seats: "7 Seater",
-    luggage: "4 Bags",
-    ac: true,
-    features: ["Hybrid Engine", "Panoramic Sunroof", "Ultra Premium", "VIP YATREE Plates"]
-  },
-  {
-    id: "force-traveller",
-    name: "Force Traveller",
-    type: "bus",
-    tag: "TEMPO",
-    image: "/tempo.png",
-    description: "Spacious luxury minibus designed specifically for family groups touring Rajasthan. Custom YATREE plates.",
-    seats: "12 to 17 Seater",
-    luggage: "10-15 Bags",
-    ac: true,
-    features: ["Pushback Seats", "Dual Roof Blowers", "LED Screen", "VIP YATREE Plates"]
-  },
-  {
-    id: "volvo-21",
-    name: "Volvo Bus (21 Seater)",
-    type: "bus",
-    tag: "VOLVO AC COACH",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
-    description: "Premium Volvo coach for mid-size groups. Smooth air suspension and reclining seats. Custom YATREE plates.",
-    seats: "21 Seater",
-    luggage: "15 Bags",
-    ac: true,
-    features: ["Air Suspension", "Reclining Seats", "High Capacity A/C", "VIP YATREE Plates"]
-  },
-  {
-    id: "volvo-27",
-    name: "Volvo Bus (27 Seater)",
-    type: "bus",
-    tag: "VOLVO AC COACH",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
-    description: "Luxury Volvo coach for group travel. Unmatched comfort for intercity Rajasthan tours. Custom YATREE plates.",
-    seats: "27 Seater",
-    luggage: "20 Bags",
-    ac: true,
-    features: ["Air Suspension", "Panoramic Windows", "Underdeck Storage", "VIP YATREE Plates"]
-  },
-  {
-    id: "volvo-35",
-    name: "Volvo Bus (35 Seater)",
-    type: "bus",
-    tag: "VOLVO AC COACH",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80",
-    description: "Spacious Volvo coach offering premium amenities for large wedding groups and corporate events. Custom YATREE plates.",
-    seats: "35 Seater",
-    luggage: "25 Bags",
-    ac: true,
-    features: ["Air Suspension", "Reclining Seats", "Premium Audio", "VIP YATREE Plates"]
-  },
-  {
-    id: "volvo-45",
-    name: "Volvo Bus (45 Seater)",
-    type: "bus",
-    tag: "VOLVO GRAND COACH",
-    image: "https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=600&q=80",
-    description: "Grand Volvo passenger cruiser. Ideal for massive destination weddings and heavy corporate tours. Custom YATREE plates.",
-    seats: "45 Seater",
-    luggage: "35 Bags",
-    ac: true,
-    features: ["Heavy Air Suspension", "PA Mic System", "Deep Cargo Bay", "VIP YATREE Plates"]
-  }
-];
 
 function CorporateBookingEngine() {
   const [activeTab, setActiveTab] = useState<"car" | "bus">("car");
-  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    company: "",
-    pickupDate: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSelectVehicle = (vehicle: Vehicle) => {
-    setSelectedVehicle(vehicle);
-    setIsSuccess(false);
-    setFormData({
-      name: "",
-      phone: "",
-      company: "",
-      pickupDate: "",
-      message: ""
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedVehicle) return;
-    
-    setIsSubmitting(true);
-    
-    try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/bookings`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          customerName: formData.name,
-          email: `${formData.phone.replace(/[^0-9]/g, '')}@yatreedestination.com`,
-          phone: formData.phone,
-          pickupLocation: "Corporate Request",
-          dropLocation: "Corporate Destination",
-          pickupDate: formData.pickupDate,
-          tripType: "B2B Concierge Priority Booking",
-          vehicleType: selectedVehicle.name,
-          customerNotes: `Company: ${formData.company || 'N/A'}. Directives: ${formData.message || 'None'}`
-        })
-      });
-    } catch (err) {
-      console.warn("DB save offline", err);
-    }
-
-    const whatsappNumber = "917627013579";
-    const text = `*YATREE DESTINATION - B2B PRIORITY RESERVATION*\n` +
-                 `----------------------------------------\n` +
-                 `👤 *Company Rep:* ${formData.name}\n` +
-                 `📞 *Direct Phone:* ${formData.phone}\n` +
-                 `🏢 *Corporate Org:* ${formData.company || 'N/A'}\n` +
-                 `🚕 *Selected Fleet:* ${selectedVehicle.name} (${selectedVehicle.seats})\n` +
-                 `📅 *Schedule Date:* ${formData.pickupDate}\n` +
-                 `📝 *Special Notes:* ${formData.message || 'None'}\n` +
-                 `----------------------------------------\n` +
-                 `Please generate commercial B2B tax invoice and assign elite driver.`;
-    
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-    window.open(whatsappUrl, "_blank");
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-  };
 
   const filteredVehicles = VEHICLES.filter(v => v.type === activeTab);
 
@@ -270,24 +50,18 @@ function CorporateBookingEngine() {
         <div className="flex justify-center mb-16">
           <div className="bg-slate-100/60 backdrop-blur border border-slate-200/60 p-1.5 rounded-2xl flex gap-1 shadow-sm max-w-[280px] w-full">
             <button
-              onClick={() => {
-                setActiveTab("car");
-                setSelectedVehicle(null);
-              }}
+              onClick={() => setActiveTab("car")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'car' ? 'bg-white text-slate-950 shadow-md border border-slate-200/40 font-bold' : 'text-slate-400 hover:text-slate-600'}`}
             >
               <Car className="w-3.5 h-3.5" />
               Car
             </button>
             <button
-              onClick={() => {
-                setActiveTab("bus");
-                setSelectedVehicle(null);
-              }}
+              onClick={() => setActiveTab("bus")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'bus' ? 'bg-white text-slate-950 shadow-md border border-slate-200/40 font-bold' : 'text-slate-400 hover:text-slate-600'}`}
             >
               <Bus className="w-3.5 h-3.5" />
-              Bus
+              Tempo Traveller
             </button>
           </div>
         </div>
@@ -295,7 +69,6 @@ function CorporateBookingEngine() {
         {/* Luminous Showroom Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {filteredVehicles.map((vehicle) => {
-            const isSelected = selectedVehicle?.id === vehicle.id;
             return (
               <div
                 key={vehicle.id}
@@ -351,185 +124,32 @@ function CorporateBookingEngine() {
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => handleSelectVehicle(vehicle)}
+                  <Link
+                    href={`/corporate-travel-udaipur/booking?vehicleId=${vehicle.id}`}
                     className="w-full bg-slate-950 group-hover:bg-gold-premium text-white group-hover:text-midnight font-black text-xs md:text-sm uppercase tracking-widest py-4 rounded-xl transition-all duration-300 mt-6 flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] cursor-pointer"
                   >
                     Reserve Priority Ride
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-
-      {/* Floating Glassmorphic VIP Concierge Drawer Modal */}
-      <AnimatePresence>
-        {selectedVehicle && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/50 backdrop-blur-md z-[150] flex items-center justify-center p-4 md:p-6"
-            onClick={() => setSelectedVehicle(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 220 }}
-              className="bg-white rounded-[2.5rem] shadow-[0_30px_70px_rgba(0,0,0,0.15)] border border-slate-100 max-w-4xl w-full overflow-hidden grid grid-cols-1 md:grid-cols-12 relative text-left"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedVehicle(null)}
-                className="absolute top-6 right-6 z-30 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              {/* Left Column: Visual Vehicle Frame */}
-              <div className="md:col-span-5 bg-gradient-to-tr from-slate-50 via-slate-50 to-amber-50/20 p-8 flex flex-col justify-between border-r border-slate-100 relative overflow-hidden shrink-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.06)_0%,transparent_80%)] pointer-events-none" />
-                
-                <div>
-                  <span className="bg-amber-500/10 border border-amber-500/20 text-amber-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-flex items-center gap-1.5 mb-4">
-                    <Star className="w-3.5 h-3.5 text-amber-600 fill-current" /> {selectedVehicle.tag}
-                  </span>
-                  <h4 className="text-2xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-3">{selectedVehicle.name}</h4>
-                  <p className="text-xs text-slate-600 font-medium leading-relaxed mb-6">{selectedVehicle.description}</p>
-                </div>
-
-                {/* Large Showroom vehicle display */}
-                <div className="my-8 relative h-48 w-full flex items-center justify-center">
-                  <img src={selectedVehicle.image} alt={selectedVehicle.name} className="w-full h-full object-contain scale-110 mix-blend-multiply relative z-10" />
-                </div>
-
-                {/* Showroom Specs */}
-                <div className="space-y-4">
-                  <div className="flex gap-2">
-                    <span className="bg-slate-950 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
-                      <Users className="w-3.5 h-3.5 text-gold-premium" /> {selectedVehicle.seats}
-                    </span>
-                    <span className="bg-white text-slate-800 text-xs font-bold tracking-wider uppercase px-3.5 py-1.5 rounded-full border border-slate-200">
-                      PLATE: YATREE
-                    </span>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-1.5">
-                    {selectedVehicle.features.map((feat, i) => (
-                      <span key={i} className="text-xs font-semibold text-slate-700 bg-slate-200/30 border border-slate-200/40 px-2.5 py-1 rounded-full">
-                        {feat}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Checkout or Success Form */}
-              <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                {isSuccess ? (
-                  <div className="p-4 text-center flex flex-col items-center justify-center min-h-[300px]">
-                    <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-6 text-emerald-500 shadow-sm">
-                      <Check className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-2">Reservation Sent!</h3>
-                    <p className="text-slate-500 text-xs leading-relaxed max-w-sm mb-8 font-medium">
-                      Your priority corporate reservation has been recorded. Our dedicated account manager has also been notified via WhatsApp and will confirm matching chauffeur details shortly.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setIsSuccess(false);
-                        setSelectedVehicle(null);
-                      }}
-                      className="bg-slate-950 hover:bg-gold-premium hover:text-midnight text-white font-black uppercase tracking-widest py-4 px-8 rounded-xl transition-all text-[9px] cursor-pointer"
-                    >
-                      Return to Showroom
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <span className="text-[8px] font-black uppercase tracking-[0.25em] text-slate-400 mb-2 block">Priority B2B Desk</span>
-                    <h3 className="text-xl md:text-2xl font-black text-slate-950 uppercase tracking-tighter mb-6">Concierge Reservation</h3>
-
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="space-y-1">
-                        <label className="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Representative Name</label>
-                        <div className="relative">
-                          <User className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
-                          <input required type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full bg-slate-50 border border-slate-200/80 hover:border-slate-300 focus:border-gold-premium px-11 py-3.5 rounded-xl text-xs font-bold text-slate-900 focus:outline-none transition-all" placeholder="E.g. Rajesh Kumar" />
-                        </div>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="block text-[9px] font-black text-slate-400 uppercase tracking-widest">WhatsApp Number</label>
-                        <div className="relative">
-                          <Phone className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
-                          <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full bg-slate-50 border border-slate-200/80 hover:border-slate-300 focus:border-gold-premium px-11 py-3.5 rounded-xl text-xs font-bold text-slate-900 focus:outline-none transition-all" placeholder="E.g. +91 96609 53135" />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Company / Hotel Name</label>
-                          <div className="relative">
-                            <Building className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
-                            <input type="text" name="company" value={formData.company} onChange={handleInputChange} className="w-full bg-slate-50 border border-slate-200/80 hover:border-slate-300 focus:border-gold-premium px-11 py-3.5 rounded-xl text-xs font-bold text-slate-900 focus:outline-none transition-all" placeholder="Optional" />
-                          </div>
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Travel Date</label>
-                          <div className="relative">
-                            <Calendar className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
-                            <input required type="date" name="pickupDate" value={formData.pickupDate} onChange={handleInputChange} className="w-full bg-slate-50 border border-slate-200/80 hover:border-slate-300 focus:border-gold-premium px-11 py-3.5 rounded-xl text-xs font-bold text-slate-900 focus:outline-none transition-all" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Special Itinerary Directives (Optional)</label>
-                        <textarea rows={2} name="message" value={formData.message} onChange={handleInputChange} className="w-full bg-slate-50 border border-slate-200/80 hover:border-slate-300 focus:border-gold-premium px-4 py-3.5 rounded-xl text-xs font-medium text-slate-900 focus:outline-none transition-all resize-none" placeholder="Provide Cost Center details or specific travel routes..."></textarea>
-                      </div>
-
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-slate-950 hover:bg-gold-premium hover:text-midnight text-white font-black uppercase tracking-widest py-4.5 rounded-xl transition-all text-xs active:scale-[0.98] cursor-pointer mt-4 flex items-center justify-center gap-2 shadow-lg shadow-slate-950/10"
-                      >
-                        {isSubmitting ? (
-                          "Logging Reservation..."
-                        ) : (
-                          <>
-                            Confirm Priority Fleet via WhatsApp
-                            <MessageCircle className="w-4 h-4 fill-current" />
-                          </>
-                        )}
-                      </button>
-                    </form>
-                  </>
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
 
 export default function CorporateTravelPage() {
   return (
-    <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pt-20 md:pb-0 pb-16">
+    <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pt-20">
       <Navbar />
       
       {/* 1. Luminous Premium Hero */}
       <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-32 overflow-hidden text-center">
         {/* Abstract Glowing Blobs */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/10 to-gold-premium/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-gold-premium/5 to-transparent rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-full max-w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/10 to-gold-premium/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-full max-w-[400px] h-[400px] bg-gradient-to-tr from-gold-premium/5 to-transparent rounded-full blur-[100px] pointer-events-none" />
         
         <div className="container mx-auto px-6 relative z-10">
            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -568,7 +188,7 @@ export default function CorporateTravelPage() {
 
       {/* 3. Luxury B2B Perks Grid */}
       <section className="py-24 bg-white border-y border-slate-200/50 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-amber-100/10 to-transparent rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[300px] bg-gradient-to-tr from-amber-100/10 to-transparent rounded-full blur-[80px] pointer-events-none" />
         
         <div className="container mx-auto px-6 max-w-6xl relative z-10 text-center">
           <div className="text-center mb-16">

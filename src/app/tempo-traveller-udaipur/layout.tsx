@@ -1,18 +1,15 @@
-import { Metadata } from "next";
+import { constructMetadata, getServiceSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tempo Traveller on Rent in Udaipur | Group Tour Packages",
-  description: "Hire 12, 16, or 20 seater Maharaja Tempo Travellers in Udaipur for family trips, corporate group tours, and wedding logistics. Best rates guaranteed.",
-  keywords: "tempo traveller udaipur, maharaja tempo traveller udaipur, group tour packages rajasthan, 12 seater tempo traveller udaipur",
-  alternates: {
-    canonical: "https://yatreedestination.com/tempo-traveller-udaipur",
-  },
-};
+export const metadata = constructMetadata({
+  title: "Tempo Traveller in Udaipur",
+  description: "Rent luxury Tempo Travellers in Udaipur for group tours.",
+});
 
-export default function TempoLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      {children}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema("Tempo Traveller in Udaipur", "Rent luxury Tempo Travellers in Udaipur for group tours.", "800")) }} />
+    </>
+  );
 }

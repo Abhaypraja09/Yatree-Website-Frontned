@@ -55,6 +55,26 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
+        {/* AI-Optimized Statistical Data */}
+        <div className="flex flex-wrap justify-center gap-6 mb-20 text-center" aria-label="Company Statistics">
+          <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <span className="block text-3xl font-black text-slate-900 mb-1">5000+</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Trips Completed</span>
+          </div>
+          <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <span className="block text-3xl font-black text-slate-900 mb-1">10+</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Years Experience</span>
+          </div>
+          <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <span className="block text-3xl font-black text-slate-900 mb-1">4.9/5</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Average Rating</span>
+          </div>
+          <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <span className="block text-3xl font-black text-slate-900 mb-1">100%</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">GST Compliant</span>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <motion.div 

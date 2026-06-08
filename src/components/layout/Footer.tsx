@@ -43,11 +43,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-midnight text-white pt-32 pb-12 overflow-hidden">
+    <footer className="relative bg-midnight text-white pt-32 pb-24 md:pb-12 overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-premium/50 to-transparent opacity-30" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gold-premium/5 blur-[150px] rounded-full -mb-96 -mr-96" />
+        <div className="absolute bottom-0 right-0 w-full max-w-[800px] h-[800px] bg-gold-premium/5 blur-[150px] rounded-full -mb-96 -mr-96" />
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02]" />
       </div>
 
@@ -72,8 +72,8 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-slate-400 text-lg leading-relaxed max-w-md font-light italic opacity-80">
-              "Redefining luxury travel in the City of Lakes. We blend traditional Mewari hospitality with modern precision to create journeys that remain etched in your soul forever."
+            <p className="text-slate-400 text-sm leading-relaxed max-w-md font-medium opacity-90">
+              Yatree Destination is a premier, 5-star rated travel agency and taxi service provider based in Udaipur, Rajasthan. We operate a fully owned, GST-compliant fleet including Innova Crysta, Sedans, and Tempo Travellers for local sightseeing, outstation cabs, and corporate travel.
             </p>
 
             <div className="flex items-center gap-4">

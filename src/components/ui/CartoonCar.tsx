@@ -51,7 +51,11 @@ export default function CartoonCar() {
           <div className="w-6" />
 
           {/* Ultra-Minimalist Premium Car Silhouette with Logo */}
-          <div className="relative w-[180px] md:w-[220px] h-[60px] z-20 mt-4">
+          <motion.div 
+            animate={{ y: [0, -2, 0] }}
+            transition={{ repeat: Infinity, duration: 0.3, ease: "easeInOut" }}
+            className="relative w-[180px] md:w-[220px] h-[60px] z-20 mt-4"
+          >
              {/* Aerodynamic Main Body */}
              <div className="absolute bottom-[10px] right-0 w-[160px] md:w-[200px] h-[24px] bg-gradient-to-r from-slate-800 to-slate-950 rounded-full rounded-tr-[30px] rounded-tl-[10px] shadow-2xl flex items-center justify-center overflow-hidden">
                 {/* Yatree Logo embedded on the car body */}
@@ -73,14 +77,28 @@ export default function CartoonCar() {
              <div className="absolute bottom-[18px] right-[4px] w-[12px] h-[6px] bg-white rounded-full shadow-[5px_0_20px_#ffffff]" />
              
              {/* Premium Alloy Wheels */}
-             <div className="absolute bottom-0 left-[35px] md:left-[45px] w-[28px] h-[28px] bg-slate-900 rounded-full border-[5px] border-slate-200 shadow-lg flex items-center justify-center">
-                <div className="w-[10px] h-[10px] bg-slate-400 rounded-full shadow-inner" />
-             </div>
+             <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 0.5, ease: "linear" }}
+                className="absolute bottom-0 left-[35px] md:left-[45px] w-[28px] h-[28px] bg-slate-900 rounded-full border-[5px] border-slate-200 shadow-lg flex items-center justify-center"
+             >
+                <div className="w-[10px] h-[10px] bg-slate-400 rounded-full shadow-inner relative">
+                   <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-600 -translate-y-1/2" />
+                   <div className="absolute left-1/2 top-0 h-full w-[2px] bg-slate-600 -translate-x-1/2" />
+                </div>
+             </motion.div>
              
-             <div className="absolute bottom-0 right-[25px] md:right-[30px] w-[28px] h-[28px] bg-slate-900 rounded-full border-[5px] border-slate-200 shadow-lg flex items-center justify-center">
-                <div className="w-[10px] h-[10px] bg-slate-400 rounded-full shadow-inner" />
-             </div>
-          </div>
+             <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 0.5, ease: "linear" }}
+                className="absolute bottom-0 right-[25px] md:right-[30px] w-[28px] h-[28px] bg-slate-900 rounded-full border-[5px] border-slate-200 shadow-lg flex items-center justify-center"
+             >
+                <div className="w-[10px] h-[10px] bg-slate-400 rounded-full shadow-inner relative">
+                   <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-600 -translate-y-1/2" />
+                   <div className="absolute left-1/2 top-0 h-full w-[2px] bg-slate-600 -translate-x-1/2" />
+                </div>
+             </motion.div>
+          </motion.div>
 
           {/* Subtle magic sparkles */}
           <Sparkles className="absolute -top-2 right-10 w-5 h-5 text-gold-premium animate-pulse" />

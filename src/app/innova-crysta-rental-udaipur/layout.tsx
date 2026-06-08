@@ -1,18 +1,15 @@
-import { Metadata } from "next";
+import { constructMetadata, getServiceSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Innova Crysta Rental Udaipur | Luxury SUV on Rent",
-  description: "Book Toyota Innova Crysta for rent in Udaipur. Premium 6/7 seater SUV for corporate travel, Rajasthan tours, and destination weddings. Expert chauffeurs.",
-  keywords: "innova crysta rental udaipur, luxury suv udaipur, hire innova in udaipur, outstation taxi udaipur",
-  alternates: {
-    canonical: "https://yatreedestination.com/innova-crysta-rental-udaipur",
-  },
-};
+export const metadata = constructMetadata({
+  title: "Innova Crysta Rental Udaipur",
+  description: "Rent a luxury Toyota Innova Crysta in Udaipur.",
+});
 
-export default function InnovaLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      {children}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema("Innova Crysta Rental Udaipur", "Rent a luxury Toyota Innova Crysta in Udaipur.", "800")) }} />
+    </>
+  );
 }

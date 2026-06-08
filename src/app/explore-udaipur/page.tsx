@@ -14,42 +14,42 @@ const PLACES_TO_VISIT = [
   {
     name: "Taj Lake Palace & Pichola",
     tag: "Scenic Water Mirage",
-    image: "/udaipur.png",
+    image: "/places/lake-pichola.jpg",
     desc: "A breathtaking white marble sanctuary floating majestically upon the azure waters of Lake Pichola. Built as a summer pleasure palace, it represents the absolute zenith of Mewari luxury.",
-    span: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
-    aspect: "aspect-[4/3] md:aspect-auto"
+    span: "col-span-1 md:col-span-2 row-span-1 md:row-span-2",
+    position: "object-center"
   },
   {
     name: "Udaipur City Palace",
     tag: "Imperial Mewar Throne",
-    image: "/udaipur_atmospheric_about_bg_1778820777543.png",
+    image: "/places/city-palace.jpg",
     desc: "A towering fortress of granite and crystal rising proudly over the lake, showcasing unparalleled architectural grandeur.",
-    span: "col-span-1",
-    aspect: "aspect-[4/5]"
+    span: "col-span-1 row-span-1",
+    position: "object-center"
   },
   {
-    name: "Jagmandir Island",
-    tag: "Stone Elephant Castle",
-    image: "/premium_udaipur_taxi_hero_1778818369975.png",
-    desc: "Once a sanctuary for Mughal Emperor Shah Jahan, renowned for majestic stone elephants and calm lakeside gardens.",
-    span: "col-span-1",
-    aspect: "aspect-[4/5]"
+    name: "Jagdish Temple",
+    tag: "Divine Architecture",
+    image: "/places/jagdish-temple.jpg",
+    desc: "An intricately carved ancient Hindu temple located just outside the Royal Palace, dedicated to Lord Vishnu and a marvel of Indo-Aryan architecture.",
+    span: "col-span-1 row-span-1",
+    position: "object-bottom"
   },
   {
-    name: "Vintage Car Museum",
-    tag: "Golden Age Wheels",
-    image: "/vintage_ambassador_udaipur_lake_1778820245635.png",
-    desc: "Step into the private imperial garage featuring original Rolls-Royces and Cadillacs driven by the Maharanas themselves.",
-    span: "col-span-1",
-    aspect: "aspect-[4/5]"
+    name: "Gangaur Ghat",
+    tag: "Lakeside Heritage",
+    image: "/places/gangaur-ghat.jpg",
+    desc: "A prominent main ghat on Lake Pichola surrounded by majestic havelis, famously known as the prime location for vibrant cultural festivals.",
+    span: "col-span-1 row-span-1",
+    position: "object-bottom"
   },
   {
     name: "Sajjangarh Monsoon Palace",
     tag: "Peak of Sunsets",
-    image: "/udaipur.png",
+    image: "/places/sajjangarh.jpg",
     desc: "A majestic mountaintop fortress overlooking the entire valley, floating amidst clouds with panoramic sunset views.",
-    span: "col-span-1 md:col-span-2 lg:col-span-2",
-    aspect: "aspect-video"
+    span: "col-span-1 row-span-1",
+    position: "object-center"
   }
 ];
 
@@ -57,25 +57,25 @@ const BEST_FOOD = [
   {
     name: "Ambrai Restaurant",
     tag: "Lakeside Dining",
-    image: "/udaipur_atmospheric_about_bg_1778820777543.png",
+    image: "/places/ambrai.png",
     desc: "Dine at eye-level with the lake, facing the majestic City Palace. The perfect spot for a romantic dinner.",
   },
   {
     name: "Upre by 1559 AD",
     tag: "Rooftop Luxury",
-    image: "/udaipur.png",
+    image: "/places/upre.png",
     desc: "Elegant terrace dining offering spectacular panoramic views of the old city and the glowing lake palaces.",
   },
   {
     name: "Natraj Dining Hall",
     tag: "Authentic Thali",
-    image: "/premium_udaipur_taxi_hero_1778818369975.png",
+    image: "/places/natraj.png",
     desc: "The absolute best Gujarati and Rajasthani unlimited thali in town. A must-visit for traditional food lovers.",
   },
   {
     name: "Tribute Restaurant",
     tag: "Fine Dining",
-    image: "/luxury_car_interior_premium_1778818423724.png",
+    image: "/places/tribute.png",
     desc: "A beautiful lakeside tribute to the fine Marwari horse breed, offering exquisite local and international cuisine.",
   }
 ];
@@ -84,21 +84,21 @@ const BEST_STAYS = [
   {
     name: "The Oberoi Udaivilas",
     tag: "Zenith of Luxury Resorts",
-    image: "/luxury_car_interior_premium_1778818423724.png",
+    image: "/places/oberoi.png",
     desc: "Sprawled over 50 acres of historic royal hunting grounds, featuring private boat arrivals and symmetric lakeside garden pavilions.",
     features: ["Infinity Pools", "Private Boat Arrival", "Wildlife Sanctuary"]
   },
   {
     name: "The Leela Palace",
     tag: "Modern Royal Grandeur",
-    image: "/premium_udaipur_taxi_hero_1778818369975.png",
+    image: "/places/leela.png",
     desc: "Experience unparalleled luxury with breathtaking views of the City Palace and Lake Pichola from every room.",
     features: ["ESPA Spa", "Lakeview Balconies", "Sheesh Mahal Dining"]
   },
   {
     name: "Taj Fateh Prakash Palace",
     tag: "Living Heritage",
-    image: "/udaipur_atmospheric_about_bg_1778820777543.png",
+    image: "/places/fateh.png",
     desc: "Stay within the historic City Palace complex, featuring antique furniture and the world-famous Crystal Gallery.",
     features: ["Crystal Gallery", "Sunset Terrace", "Royal Suites"]
   }
@@ -109,28 +109,28 @@ const OUTSIDE_EXCURSIONS = [
     name: "Kumbhalgarh Fort",
     tag: "The Great Wall of India",
     distance: "85 km | 2.5 Hrs Drive",
-    image: "/udaipur_atmospheric_about_bg_1778820777543.png",
+    image: "/places/kumbhalgarh.png",
     desc: "Home to the second longest continuous wall on the planet, stretching over 36 kilometers.",
   },
   {
     name: "Ranakpur Jain Temple",
     tag: "Marble Masterpiece",
     distance: "95 km | 2 Hrs Drive",
-    image: "/udaipur.png",
+    image: "/places/ranakpur.png",
     desc: "An intricately carved white marble temple supported by 1,444 uniquely designed pillars.",
   },
   {
     name: "Chittorgarh Fort",
     tag: "Legacy of Rajput Valor",
     distance: "115 km | 2.5 Hrs Drive",
-    image: "/vintage_ambassador_udaipur_lake_1778820245635.png",
+    image: "/places/chittorgarh.png",
     desc: "The largest fort in India, a UNESCO World Heritage site symbolizing immense bravery and pride.",
   },
   {
     name: "Haldighati",
     distance: "50 km | 1.5 Hrs Drive",
     tag: "Battlefield of Heroes",
-    image: "/premium_udaipur_taxi_hero_1778818369975.png",
+    image: "/places/haldighati.png",
     desc: "The historic mountain pass where the legendary battle between Maharana Pratap and the Mughals took place.",
   }
 ];
@@ -153,13 +153,20 @@ export default function ExploreUdaipurPage() {
       {/* 1. Cinematic Parallax Hero Section */}
       <section ref={heroRef} className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0 z-0">
-          <Image
-            src="/udaipur.png"
-            alt="Udaipur Panoramic"
-            fill
-            className="object-cover scale-105 pointer-events-none"
-            priority
-          />
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.15 }}
+            transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/places/explore-hero.png"
+              alt="Panoramic view of Udaipur City Palace at sunset"
+              fill
+              className="object-cover pointer-events-none"
+              priority
+            />
+          </motion.div>
           {/* Elegant dark gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-[#FDFBF7]" />
         </motion.div>
@@ -200,18 +207,18 @@ export default function ExploreUdaipurPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 grid-rows-[auto]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[300px]">
             {PLACES_TO_VISIT.map((item, i) => (
               <div 
                 key={i} 
-                className={`group relative rounded-[2rem] overflow-hidden bg-slate-900 shadow-xl ${item.span} ${item.aspect}`}
+                className={`group relative rounded-[2rem] overflow-hidden bg-slate-900 shadow-xl ${item.span} h-full w-full`}
               >
                 <Image 
                   src={item.image} 
                   alt={item.name} 
                   fill 
                   sizes="(max-width: 768px) 100vw, 500px"
-                  className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-90 group-hover:opacity-100" 
+                  className={`object-cover ${item.position || 'object-center'} group-hover:scale-110 transition-transform duration-[1.5s] ease-out opacity-90 group-hover:opacity-100`} 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                 

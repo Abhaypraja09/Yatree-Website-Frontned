@@ -1,18 +1,14 @@
-import { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Yatree Destination | Premium Travel & Taxi Service in Udaipur",
-  description: "Discover the story of Yatree Destination, Udaipur's leading agency for luxury travel, wedding car rental, and corporate transportation. Our mission is safety, punctuality, and comfort.",
-  keywords: "about yatree destination, udaipur travel agency story, reliable taxi udaipur, professional travel partner rajasthan",
-  alternates: {
-    canonical: "https://yatreedestination.com/about",
-  },
-};
+export const metadata = constructMetadata({
+  title: "About Us",
+  description: "Learn about Yatree Destination, Udaipur's most trusted taxi service...",
+});
 
-export default function AboutLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      {children}
+    </>
+  );
 }

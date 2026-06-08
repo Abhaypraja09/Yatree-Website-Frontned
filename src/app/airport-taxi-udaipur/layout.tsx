@@ -1,18 +1,15 @@
-import { Metadata } from "next";
+import { constructMetadata, getServiceSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Airport Taxi Udaipur | 24/7 Reliable Cab Service @ Maharana Pratap Airport",
-  description: "Book punctual airport taxi service in Udaipur. We offer 24/7 airport pickup & drop services from Maharana Pratap Airport (UDA) with meet & greet service.",
-  keywords: "airport taxi udaipur, udaipur airport cab, maharana pratap airport taxi, airport pickup udaipur, airport drop udaipur, udaipur airport taxi fare",
-  alternates: {
-    canonical: "https://yatreedestination.com/airport-taxi-udaipur",
-  },
-};
+export const metadata = constructMetadata({
+  title: "Airport Taxi Udaipur",
+  description: "Reliable and punctual airport taxi transfers in Udaipur.",
+});
 
-export default function AirportTaxiLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      {children}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema("Airport Taxi Udaipur", "Reliable and punctual airport taxi transfers in Udaipur.", "800")) }} />
+    </>
+  );
 }

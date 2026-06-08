@@ -1,18 +1,15 @@
-import { Metadata } from "next";
+import { constructMetadata, getServiceSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Wedding Car Rental Udaipur | Luxury Wedding Taxi & Vintage Cars",
-  description: "Make your destination wedding in Udaipur unforgettable with our luxury wedding car rental services. Premium fleet for guest transport and vintage cars for the couple.",
-  keywords: "wedding car rental udaipur, luxury wedding cars udaipur, vintage car rental for weddings udaipur, wedding guest transportation udaipur, baraat cars udaipur",
-  alternates: {
-    canonical: "https://yatreedestination.com/wedding-car-rental-udaipur",
-  },
-};
+export const metadata = constructMetadata({
+  title: "Wedding Car Rental Udaipur",
+  description: "Luxury wedding car rentals and complete guest transportation logistics.",
+});
 
-export default function WeddingCarLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      {children}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema("Wedding Car Rental Udaipur", "Luxury wedding car rentals and complete guest transportation logistics.", "800")) }} />
+    </>
+  );
 }

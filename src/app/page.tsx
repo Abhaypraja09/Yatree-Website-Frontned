@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/PremiumHero";
 import DetailedAbout from "@/components/sections/DetailedAbout";
 import { Reveal } from "@/components/ui/Reveal";
-import CartoonCar from "@/components/ui/CartoonCar";
+
 import { Phone, MessageCircle } from "lucide-react";
 
 // Dynamic imports for below-the-fold components to improve initial load speed
@@ -14,9 +14,9 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true }
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-transparent selection:bg-gold-premium selection:text-midnight pb-16 md:pb-0 overflow-x-hidden">
+    <main className="relative min-h-screen bg-transparent selection:bg-gold-premium selection:text-midnight overflow-x-hidden">
       {/* 1. Navigation & Hero - Critical for LCP */}
-      <CartoonCar />
+
       <Navbar />
       <Hero />
 
@@ -40,7 +40,7 @@ export default function Home() {
           <Phone className="w-4 h-4 text-gold-premium" /> Call Now
         </a>
         <a
-          href="https://wa.me/919660953135"
+          href="https://wa.me/917627013579"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-xs uppercase tracking-widest"

@@ -115,7 +115,7 @@ function BookingEngine() {
 
   // Read URL query parameter or dynamic route on load
   useEffect(() => {
-    if (routeType === "bus") {
+    if (routeType === "tempo" || routeType === "bus") {
       setActiveTab("bus");
       setSelectedServiceIndex(2); // Local 8 Hours for Bus
       setSelectedVehicleType("t12");
@@ -272,7 +272,7 @@ function BookingEngine() {
                 </p>
 
                 {/* Tab Switcher - Car / Bus */}
-                <div className="flex bg-slate-950 p-1.5 rounded-xl mt-8 max-w-[280px]">
+                <div className="flex bg-slate-950 p-1.5 rounded-xl mt-8 w-full max-w-[280px]">
                   <Link
                     href="/booking/car"
                     className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'car' ? 'bg-gold-premium text-midnight font-bold' : 'text-white/60 hover:text-white'}`}
@@ -281,11 +281,11 @@ function BookingEngine() {
                     Car
                   </Link>
                   <Link
-                    href="/booking/bus"
+                    href="/booking/tempo"
                     className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'bus' ? 'bg-gold-premium text-midnight font-bold' : 'text-white/60 hover:text-white'}`}
                   >
                     <Bus className="w-3.5 h-3.5" />
-                    Bus
+                    Tempo Traveller
                   </Link>
                 </div>
               </div>
@@ -484,7 +484,7 @@ function BookingEngine() {
                 <div className="border-t border-slate-150 pt-6">
                   <form onSubmit={handleSubmit} className="space-y-4 text-left">
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
                           <User className="w-3.5 h-3.5 text-gold-premium" />
@@ -501,7 +501,7 @@ function BookingEngine() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5 text-gold-premium" />
@@ -566,15 +566,15 @@ function BookingEngine() {
 
 export default function BookingPage() {
   return (
-    <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pt-24 md:pb-0 pb-16">
+    <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pt-24">
       <Navbar />
       
       {/* Premium Visual Banner */}
       <div className="bg-slate-950 py-24 px-6 text-center relative overflow-hidden">
         {/* Glow */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold-premium/15 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gold-premium/10 rounded-full blur-[80px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[300px] bg-gold-premium/15 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 right-0 w-full max-w-[300px] h-[300px] bg-gold-premium/10 rounded-full blur-[80px]" />
         </div>
         
         <span className="text-gold-premium font-black uppercase tracking-[0.3em] text-[10px] mb-4 block flex items-center justify-center gap-2">

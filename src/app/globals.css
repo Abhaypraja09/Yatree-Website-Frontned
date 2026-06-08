@@ -280,3 +280,18 @@ html.dark body:has(#three-d-scroll-bg) .text-slate-600,
 html.dark body:has(#three-d-scroll-bg) .text-slate-500 {
   color: #cbd5e1 !important; /* Cool grey */
 }
+
+/* ==========================================================================
+   ELFSIGHT WIDGET OVERRIDES
+   ========================================================================== */
+/* Hide the Elfsight Free Badge/Watermark */
+a[href*="elfsight.com"],
+a[href*="apps.elfsight.com"],
+.eapps-link,
+.eapps-widget-toolbar,
+[class*="Badge-module"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}

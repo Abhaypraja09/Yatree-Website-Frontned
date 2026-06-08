@@ -5,12 +5,13 @@ export function generateStaticParams() {
   return [
     { type: [] },       // Matches /booking
     { type: ["car"] },  // Matches /booking/car
-    { type: ["bus"] },  // Matches /booking/bus
+    { type: ["bus"] },  // Matches /booking/bus (legacy)
+    { type: ["tempo"] },// Matches /booking/tempo
   ];
 }
 
 export const metadata: Metadata = {
-  title: "Book Taxi or Bus in Udaipur | Yatree Destination",
+  title: "Book Taxi or Tempo Traveller in Udaipur | Yatree Destination",
   description: "Instant booking for premium sedans, SUVs, and Tempo Travellers in Udaipur.",
 };
 
