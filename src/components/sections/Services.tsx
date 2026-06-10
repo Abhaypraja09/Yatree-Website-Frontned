@@ -184,7 +184,7 @@ export default function Services() {
                        <span className="text-sm text-slate-400 font-bold uppercase tracking-widest">Happy Clients</span>
                     </div>
                     <div className="flex items-center gap-3">
-                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center font-bold text-gold-premium text-xl italic">12+</div>
+                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center font-bold text-gold-premium text-xl italic">6+</div>
                        <span className="text-sm text-slate-400 font-bold uppercase tracking-widest">Years Experience</span>
                     </div>
                  </div>

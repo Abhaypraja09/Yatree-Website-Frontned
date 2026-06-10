@@ -92,11 +92,11 @@ export default function AboutPage() {
       </ThreeDScrollWrapper>
 
       <ThreeDScrollWrapper>
-        <ERickshawSection />
+        <DetailedAbout />
       </ThreeDScrollWrapper>
 
       <ThreeDScrollWrapper>
-        <DetailedAbout />
+        <ERickshawSection />
       </ThreeDScrollWrapper>
 
       <ThreeDScrollWrapper>

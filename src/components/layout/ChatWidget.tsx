@@ -10,8 +10,50 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating Toggle Button */}
-      <div className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-[90]">
+      {/* Floating Action Buttons Group */}
+      <div className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-[90] flex flex-col items-end gap-3">
+        
+        {/* Instagram Follow Button (Sleek Premium Pill) */}
+        <motion.a 
+          href="https://www.instagram.com/yatreedestination?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+          target="_blank" 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="h-12 md:h-14 px-3 rounded-full bg-white text-slate-900 hidden md:flex items-center gap-2.5 shadow-xl border border-slate-200 group hover:border-pink-500/30 hover:shadow-pink-500/10 transition-all"
+        >
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center shrink-0 text-white shadow-inner">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-4 h-4"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </div>
+          <span className="font-bold text-[13px] md:text-sm tracking-wide whitespace-nowrap pr-2">Follow on Instagram</span>
+        </motion.a>
+
+        {/* Direct Call Button (Pill with Number) */}
+        <motion.a 
+          href="tel:+917627013579" 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="h-12 md:h-14 px-3 rounded-full bg-slate-950 text-white hidden md:flex items-center gap-2.5 shadow-xl border border-white/10 group hover:bg-gold-premium hover:text-midnight transition-colors"
+        >
+          <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-midnight/10 flex items-center justify-center shrink-0">
+             <Phone className="w-4 h-4 fill-current" />
+          </div>
+          <span className="font-bold text-sm tracking-wider whitespace-nowrap pr-2">+91 76270 13579</span>
+        </motion.a>
+
+        {/* Chat Toggle Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -179,7 +221,7 @@ export default function ChatWidget() {
                   </div>
                   <div>
                     <span className="block text-[10px] font-black uppercase tracking-widest text-slate-400">Head Office</span>
-                    <span className="text-xs font-bold text-slate-800 leading-tight block">Shed no.2, Nokha, 100 Feet Rd, Gayariawas, Udaipur</span>
+                    <span className="text-xs font-bold text-slate-800 leading-tight block">97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3, UDAIPUR, Rajasthan, 313001</span>
                   </div>
                 </div>
               </div>

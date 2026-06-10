@@ -8,9 +8,10 @@ interface ParallaxImageProps {
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
 }
 
-export default function ParallaxImage({ src, alt, className = "" }: ParallaxImageProps) {
+export default function ParallaxImage({ src, alt, className = "", imageClassName = "object-cover" }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null);
   
   // Track scroll coordinates relative to the viewport
@@ -51,7 +52,7 @@ export default function ParallaxImage({ src, alt, className = "" }: ParallaxImag
           alt={alt} 
           fill 
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
+          className={imageClassName}
         />
       </motion.div>
       

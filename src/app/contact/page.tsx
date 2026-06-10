@@ -38,9 +38,8 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-widest text-xs">Head Office Location</h4>
                   <p className="text-sm text-slate-500 leading-relaxed font-light">
-                    Shed no.2, Nokha, 100 Feet Rd,<br />
-                    Near Bethak Cafe, Mali Colony,<br />
-                    Gayariawas, Udaipur, Rajasthan - 313002
+                    97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3,<br />
+                    UDAIPUR, Udaipur, Rajasthan, 313001
                   </p>
                 </div>
               </div>
@@ -63,7 +62,10 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-widest text-xs">Email Enquiries</h4>
                   <p className="text-sm text-slate-500 leading-relaxed mb-4 font-light">For corporate accounts and wedding packages.</p>
-                  <a href="mailto:info@yatreedestination.com" className="font-black text-slate-900 hover:text-primary transition-colors tracking-tight text-lg">info@yatreedestination.com</a>
+                  <div className="flex flex-col gap-2">
+                    <a href="mailto:Kavishjain@yatreedestination.com" className="font-black text-slate-900 hover:text-primary transition-colors tracking-tight text-lg">Kavishjain@yatreedestination.com</a>
+                    <a href="mailto:info@yatreedestination.com" className="font-black text-slate-900 hover:text-primary transition-colors tracking-tight text-lg">info@yatreedestination.com</a>
+                  </div>
                 </div>
               </div>
             </div>

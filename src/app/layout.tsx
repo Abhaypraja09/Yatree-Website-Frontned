@@ -26,7 +26,6 @@ const jakarta = Plus_Jakarta_Sans({
 
 import { constructMetadata, getLocalBusinessSchema } from "@/lib/seo";
 import ChatWidget from "@/components/layout/ChatWidget";
-import ThemeCustomizer from "@/components/layout/ThemeCustomizer";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -63,7 +62,6 @@ export default function RootLayout({
               <div className="relative w-full overflow-hidden flex flex-col min-h-screen">
                 {children}
                 <ChatWidget />
-                <ThemeCustomizer />
               </div>
             </SmoothScroll>
           </AuthProvider>

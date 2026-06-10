@@ -6,9 +6,9 @@ export const SITE_CONFIG = {
   url: "https://www.yatreedestination.com",
   ogImage: "/logo.png",
   twitterHandle: "@yatreedestination",
-  address: "Shed no.2, Nokha, 100 Feet Rd, near Bethak Cafe, Mali Colony, Gayariawas, Udaipur, Rajasthan 313002",
+  address: "97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3, UDAIPUR, Udaipur, Rajasthan, 313001",
   phone: "+91 76270 13579",
-  email: "info@yatreedestination.com",
+  email: "Kavishjain@yatreedestination.com",
   keywords: [
     "Taxi Service in Udaipur",
     "Cab Service in Udaipur",
@@ -27,7 +27,7 @@ export function constructMetadata({
   title = SITE_CONFIG.name,
   description = SITE_CONFIG.description,
   image = SITE_CONFIG.ogImage,
-  icons = "/favicon.ico",
+  icons = "/logo.png",
   noIndex = false,
 }: {
   title?: string;
@@ -62,6 +62,9 @@ export function constructMetadata({
       creator: SITE_CONFIG.twitterHandle
     },
     icons,
+    verification: {
+      google: "REPLACE_THIS_WITH_YOUR_GOOGLE_VERIFICATION_CODE",
+    },
     metadataBase: new URL(SITE_CONFIG.url),
     ...(noIndex && {
       robots: {
@@ -86,10 +89,10 @@ export function getLocalBusinessSchema() {
     "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shed no.2, Nokha, 100 Feet Rd, Near Bethak Cafe, Mali Colony, Gayariawas",
+      "streetAddress": "97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3",
       "addressLocality": "Udaipur",
       "addressRegion": "Rajasthan",
-      "postalCode": "313002",
+      "postalCode": "313001",
       "addressCountry": "IN"
     },
     "geo": {

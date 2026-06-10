@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
             <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Trips Completed</span>
           </div>
           <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-            <span className="block text-3xl font-black text-slate-900 mb-1">10+</span>
+            <span className="block text-3xl font-black text-slate-900 mb-1">6+</span>
             <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Years Experience</span>
           </div>
           <div className="px-8 py-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">

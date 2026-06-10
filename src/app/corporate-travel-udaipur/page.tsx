@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, Suspense, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { 
@@ -27,12 +27,27 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { VEHICLES, type Vehicle } from "@/lib/corporateVehicles";
 
 
 
 function CorporateBookingEngine() {
-  const [activeTab, setActiveTab] = useState<"car" | "bus">("car");
+  const searchParams = useSearchParams();
+  const typeParam = searchParams.get("type");
+
+  const [activeTab, setActiveTab] = useState<"car" | "bus">(
+    typeParam === "bus" || typeParam === "tempo" ? "bus" : "car"
+  );
+
+  // Sync state if search params change externally (e.g. browser navigation)
+  useEffect(() => {
+    if (typeParam === "bus" || typeParam === "tempo") {
+      setActiveTab("bus");
+    } else if (typeParam === "car") {
+      setActiveTab("car");
+    }
+  }, [typeParam]);
 
   const filteredVehicles = VEHICLES.filter(v => v.type === activeTab);
 
@@ -49,20 +64,22 @@ function CorporateBookingEngine() {
         {/* Minimal iOS-style Tab Switcher */}
         <div className="flex justify-center mb-16">
           <div className="bg-slate-100/60 backdrop-blur border border-slate-200/60 p-1.5 rounded-2xl flex gap-1 shadow-sm max-w-[280px] w-full">
-            <button
-              onClick={() => setActiveTab("car")}
+            <Link
+              href="/corporate-travel-udaipur?type=car"
+              scroll={false}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'car' ? 'bg-white text-slate-950 shadow-md border border-slate-200/40 font-bold' : 'text-slate-400 hover:text-slate-600'}`}
             >
               <Car className="w-3.5 h-3.5" />
               Car
-            </button>
-            <button
-              onClick={() => setActiveTab("bus")}
+            </Link>
+            <Link
+              href="/corporate-travel-udaipur?type=bus"
+              scroll={false}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTab === 'bus' ? 'bg-white text-slate-950 shadow-md border border-slate-200/40 font-bold' : 'text-slate-400 hover:text-slate-600'}`}
             >
               <Bus className="w-3.5 h-3.5" />
               Tempo Traveller
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -74,14 +91,14 @@ function CorporateBookingEngine() {
                 key={vehicle.id}
                 className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200/50 shadow-[0_8px_30px_rgb(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:border-gold-premium/20"
               >
-                {/* Shiny Product Frame with Radial Gold Glow */}
-                <div className="relative h-56 w-full bg-white border-b border-slate-100/60 p-2 flex items-center justify-center overflow-hidden shrink-0">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.04)_0%,transparent_70%)] pointer-events-none" />
+                {/* Cinematic Product Frame */}
+                <div className="relative h-64 w-full bg-slate-900 overflow-hidden shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10 pointer-events-none" />
                   
                   <img 
                     src={vehicle.image} 
                     alt={vehicle.name} 
-                    className="w-full h-full object-contain scale-[1.15] mix-blend-multiply relative z-10 transition-transform duration-500 group-hover:scale-[1.25]" 
+                    className="w-full h-full object-cover relative z-0 transition-transform duration-700 group-hover:scale-[1.08]" 
                   />
 
                   {/* Premium Badge tag */}
@@ -146,7 +163,7 @@ export default function CorporateTravelPage() {
       <Navbar />
       
       {/* 1. Luminous Premium Hero */}
-      <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-32 overflow-hidden text-center">
+      <section className="hidden md:block relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-32 overflow-hidden text-center">
         {/* Abstract Glowing Blobs */}
         <div className="absolute top-0 left-1/4 w-full max-w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/10 to-gold-premium/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-full max-w-[400px] h-[400px] bg-gradient-to-tr from-gold-premium/5 to-transparent rounded-full blur-[100px] pointer-events-none" />
@@ -162,15 +179,7 @@ export default function CorporateTravelPage() {
              <p className="text-xs md:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed mb-10 font-medium">
                Experience the gold standard in corporate transportation. From VIP client transfers to monthly fleet management, we provide <strong>corporate cab services in Udaipur</strong> with GST compliance, professional drivers, and pristine showroom vehicles.
              </p>
-             <div className="flex flex-wrap justify-center gap-4">
-                <a href="tel:+917627013579" className="bg-slate-950 hover:bg-gold-premium text-white hover:text-midnight px-8 py-4 rounded-xl font-black uppercase tracking-widest text-[9px] flex items-center gap-2 transition-all shadow-lg active:scale-95">
-                  <Briefcase className="w-4 h-4 text-gold-premium" /> Partner With Us
-                </a>
-                <a href="#showroom" className="bg-white border border-slate-200/80 hover:border-gold-premium/30 text-slate-700 px-8 py-4 rounded-xl font-black uppercase tracking-widest text-[9px] hover:bg-slate-50 transition-all flex items-center gap-2 active:scale-95 shadow-sm">
-                  <FileText className="w-4 h-4 text-gold-premium" /> View Showroom Fleet
-                </a>
-             </div>
-           </motion.div>
+             </motion.div>
         </div>
       </section>
 

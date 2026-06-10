@@ -20,7 +20,7 @@ export default function ERickshawSection() {
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Bridal Decoration",
+      title: "Rickshaw Event",
       desc: "Exquisitely decorated rickshaws for the bride and groom's grand entrance."
     },
     {
