@@ -56,6 +56,18 @@ const PLACES_TO_VISIT = [
 
 const BEST_FOOD = [
   {
+    name: "Smokey Jo's Cafe",
+    tag: "Vegan & Rock Vibes",
+    image: "/places/smokey-jos.jpg",
+    desc: "A vibrant rock-themed cafe offering amazing vegan food, house-made sourdough, great music, and a lively atmosphere.",
+  },
+  {
+    name: "Emjay Brewery",
+    tag: "Artisan Kombucha",
+    image: "/places/emjay-brewery.jpg",
+    desc: "A chic, healthy brewery offering artisan kombucha like Lemongrass Mint and Pomegranate, packed with probiotics.",
+  },
+  {
     name: "Ambrai Restaurant",
     tag: "Lakeside Dining",
     image: "/places/ambrai.png",
