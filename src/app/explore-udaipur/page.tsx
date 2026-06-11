@@ -8,6 +8,7 @@ import {
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import OutstationSlider from "@/components/sections/OutstationSlider";
 
 // ---- DATA ----
 const PLACES_TO_VISIT = [
@@ -350,35 +351,7 @@ export default function ExploreUdaipurPage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {OUTSIDE_EXCURSIONS.map((item, i) => (
-              <div key={i} className="group bg-slate-50 border border-slate-200 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:border-gold-premium/30 transition-all duration-500 flex flex-col">
-                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 300px" className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-slate-900 text-[9px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 text-gold-premium" /> {item.distance}
-                  </div>
-                </div>
-                
-                <div className="p-6 flex flex-col flex-1 justify-between">
-                  <div>
-                    <span className="text-[9px] text-gold-premium font-black uppercase tracking-widest mb-1.5 block">{item.tag}</span>
-                    <h3 className="font-black text-xl text-slate-900 leading-tight mb-3 group-hover:text-gold-premium transition-colors">{item.name}</h3>
-                    <p className="text-slate-500 text-xs font-medium leading-relaxed mb-6">{item.desc}</p>
-                  </div>
-                  
-                  <a 
-                    href="https://wa.me/917627013579"
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="w-full bg-white border-2 border-slate-200 hover:border-gold-premium hover:bg-gold-premium hover:text-midnight text-slate-900 font-black text-[10px] uppercase tracking-widest py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
-                  >
-                    Book Cab to {item.name.split(' ')[0]} <ArrowRight className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <OutstationSlider excursions={OUTSIDE_EXCURSIONS} />
         </div>
       </section>
 

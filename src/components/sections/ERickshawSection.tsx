@@ -1,12 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Leaf, Camera, Heart, Users, Music, ChevronRight } from "lucide-react";
 import KineticTitle from "../ui/KineticTitle";
 import { Reveal } from "../ui/Reveal";
 
 export default function ERickshawSection() {
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const rickshawPhotos = [
+    "/places/rickshaw-final-1.jpg",
+    "/places/rickshaw-final-2.jpg",
+    "/places/rickshaw-final-3.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIdx((prev) => (prev + 1) % rickshawPhotos.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   const services = [
     {
       icon: <Users className="w-6 h-6" />,
@@ -31,7 +46,7 @@ export default function ERickshawSection() {
   ];
 
   return (
-    <section className="relative py-24 md:py-32 bg-midnight overflow-hidden">
+    <section className="relative py-16 md:py-20 bg-midnight overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-gold-premium/10 blur-[120px] rounded-full animate-pulse" />
@@ -40,32 +55,54 @@ export default function ERickshawSection() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Visual Side */}
-          <div className="relative">
+          <div className="relative lg:col-span-7">
             <Reveal direction="left" width="100%">
-              <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group">
-                <Image
-                  src="/authentic_udaipur_erickshaw_day_1778820004125.png"
-                  alt="Authentic Udaipur E-Rickshaw"
-                  fill
-                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent" />
+              <div className="relative aspect-square lg:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIdx}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={rickshawPhotos[currentImageIdx] || rickshawPhotos[0]}
+                      alt={`Yatree Destination Auto Rickshaw ${currentImageIdx + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent z-10 pointer-events-none" />
                 
                 {/* Secondary Image Inset */}
                 <motion.div 
                   initial={{ x: 20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
-                  className="absolute top-10 right-[-20px] w-48 h-64 rounded-3xl overflow-hidden border-4 border-midnight shadow-2xl z-20 hidden md:block"
+                  className="absolute top-8 right-[-16px] w-36 h-48 rounded-[2rem] overflow-hidden border-4 border-midnight shadow-2xl z-20 hidden md:block"
                 >
-                  <Image 
-                    src="/premium_udaipur_erickshaw_wedding_1778819653490.png"
-                    alt="Event Decoration"
-                    fill
-                    className="object-cover"
-                  />
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIdx}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1 }}
+                      className="absolute inset-0"
+                    >
+                      <Image 
+                        src={rickshawPhotos[(currentImageIdx + 1) % rickshawPhotos.length] || rickshawPhotos[1]}
+                        alt={`Event Decoration ${currentImageIdx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </motion.div>
                 
                 {/* Floating Badge */}
@@ -89,7 +126,7 @@ export default function ERickshawSection() {
           </div>
 
           {/* Content Side */}
-          <div className="space-y-12">
+          <div className="space-y-6 lg:col-span-5">
             <div>
               <Reveal width="100%">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-premium/20 bg-gold-premium/5 text-gold-premium text-[10px] font-black uppercase tracking-[0.3em] mb-6">
@@ -99,14 +136,14 @@ export default function ERickshawSection() {
               
               <KineticTitle 
                 text="REVOLUTIONIZING THE ROYAL JOURNEY."
-                className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-[0.95] tracking-tighter uppercase mb-8"
+                className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-white leading-[1] tracking-tighter uppercase mb-6"
               />
               
               <Reveal delay={0.4} width="100%">
-                <p className="text-slate-400 text-lg leading-relaxed font-light italic">
+                <p className="text-slate-400 text-base leading-relaxed font-light italic">
                   "Experience an auto-rickshaw parked on a sun-drenched street in Udaipur, its vibrant colors popping against the dusty road. Navigate through narrow lanes, with the city's historic architecture providing a picturesque backdrop."
                 </p>
-                <p className="text-slate-500 text-base leading-relaxed font-light mt-4">
+                <p className="text-slate-500 text-sm leading-relaxed font-light mt-4">
                   We combine the authentic essence of local transportation with premium service, drawing you into the heart of Udaipur through a curated, eco-friendly journey.
                 </p>
               </Reveal>
@@ -116,20 +153,20 @@ export default function ERickshawSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((service, index) => (
                 <Reveal key={index} delay={0.2 + index * 0.1} width="100%">
-                  <div className="group p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold-premium/30 hover:bg-white/10 transition-all duration-500">
-                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold-premium group-hover:text-midnight transition-colors duration-500 text-gold-premium">
+                  <div className="group p-5 rounded-[1.5rem] bg-white/5 border border-white/10 hover:border-gold-premium/30 hover:bg-white/10 transition-all duration-500">
+                    <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center mb-3 group-hover:bg-gold-premium group-hover:text-midnight transition-colors duration-500 text-gold-premium">
                       {service.icon}
                     </div>
-                    <h4 className="text-white font-bold mb-2 tracking-tight">{service.title}</h4>
-                    <p className="text-slate-500 text-xs leading-relaxed font-light">{service.desc}</p>
+                    <h4 className="text-white text-sm font-bold mb-1 tracking-tight">{service.title}</h4>
+                    <p className="text-slate-500 text-[11px] leading-relaxed font-light">{service.desc}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
             <Reveal delay={0.8} width="100%">
-              <div className="pt-6">
-                <button className="h-14 px-10 bg-gold-premium text-midnight rounded-full font-black text-xs uppercase tracking-[0.2em] shadow-2xl hover:scale-105 transition-all flex items-center gap-2">
+              <div className="pt-4">
+                <button className="h-12 px-8 bg-gold-premium text-midnight rounded-full font-black text-[11px] uppercase tracking-[0.2em] shadow-2xl hover:scale-105 transition-all flex items-center gap-2">
                   Inquire for Events <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
