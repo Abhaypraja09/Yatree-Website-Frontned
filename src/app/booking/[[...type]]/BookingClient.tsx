@@ -380,16 +380,7 @@ function BookingEngine() {
                 </AnimatePresence>
               </div>
 
-              {/* Info block */}
-              <div className="bg-slate-100/60 border border-slate-200/60 rounded-2xl p-5 flex gap-4 text-left">
-                <Info className="w-5.5 h-5.5 text-gold-premium shrink-0" />
-                <div className="space-y-1">
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">Service Directives</span>
-                  <p className="text-xs text-slate-700 leading-relaxed font-semibold">
-                    Pricing incorporates all toll costs, commercial permit fees, smart parking dues, and fuel charges. Click any item above to instantly load it into the quote estimator!
-                  </p>
-                </div>
-              </div>
+
 
             </div>
 
@@ -569,7 +560,7 @@ function BookingEngine() {
 {/* ========================================================================= */}
           {/* RENDER RICH SEO AND TOURIST INFORMATION SECTIONS */}
           {/* ========================================================================= */}
-          <div className="relative mt-28 border-t border-slate-200/80 pt-20 space-y-28">
+          <div className="relative mt-12 border-t border-slate-200/80 pt-10 space-y-20">
             
             {/* Background ambient glowing elements */}
             <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-gold-premium/4 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" />
@@ -577,6 +568,30 @@ function BookingEngine() {
 
             {activeTab === 'car' ? (
               <>
+                {/* Call Now Banner Moved Up */}
+                <div className="relative overflow-hidden bg-slate-950 text-white p-6 md:p-8 rounded-3xl mb-12 border border-white/5 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gold-premium/10 rounded-full blur-2xl pointer-events-none" />
+                  
+                  <div className="flex items-center gap-4 text-left mr-auto relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-gold-premium shrink-0 border border-white/5">
+                      <Phone className="w-6 h-6 animate-pulse" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
+                      <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
+                    <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                      Call Now
+                    </a>
+                    <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                      <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
+                    </a>
+                  </div>
+                </div>
+
                 {/* Section 1: Book the Best Taxi Service in Udaipur */}
                 <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-slate-50/50 border border-slate-200/60 rounded-[3rem] p-8 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_70px_rgba(212,175,55,0.06)] transition-all duration-500 text-left">
                   <div className="absolute top-0 right-0 w-80 h-80 bg-gold-premium/5 rounded-full blur-3xl pointer-events-none" />
@@ -621,29 +636,7 @@ function BookingEngine() {
                       ))}
                     </div>
 
-                    {/* Call Now Banner */}
-                    <div className="relative overflow-hidden bg-slate-950 text-white p-6 md:p-8 rounded-3xl mt-10 border border-white/5 flex flex-col md:flex-row items-center gap-6 shadow-xl">
-                      <div className="absolute top-0 right-0 w-40 h-40 bg-gold-premium/10 rounded-full blur-2xl pointer-events-none" />
-                      
-                      <div className="flex items-center gap-4 text-left mr-auto relative z-10">
-                        <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-gold-premium shrink-0 border border-white/5">
-                          <Phone className="w-6 h-6 animate-pulse" />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
-                          <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
-                        </div>
-                      </div>
-                      
-                      <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
-                        <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
-                          Call Now
-                        </a>
-                        <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
-                          <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
-                        </a>
-                      </div>
-                    </div>
+
 
                   </div>
                 </section>
