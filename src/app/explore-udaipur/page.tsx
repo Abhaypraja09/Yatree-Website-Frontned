@@ -58,7 +58,7 @@ const BEST_FOOD = [
   {
     name: "Smokey Jo's Cafe",
     tag: "Vegan & Rock Vibes",
-    image: "/places/smokey-jos.jpg",
+    image: "/places/smokey-jos-v2.jpg",
     desc: "A vibrant rock-themed cafe offering amazing vegan food, house-made sourdough, great music, and a lively atmosphere.",
   },
   {
