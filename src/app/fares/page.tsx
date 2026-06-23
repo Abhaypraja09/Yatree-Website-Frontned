@@ -84,7 +84,7 @@ export default function Fares() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                        <a href="tel:+917627013579" className="flex-1 bg-[#1a365d] hover:bg-navy-800 text-white font-bold py-4 rounded text-center transition-colors flex justify-center items-center gap-2 uppercase tracking-wide">
+                        <a href="tel:+919257109728" className="flex-1 bg-[#1a365d] hover:bg-navy-800 text-white font-bold py-4 rounded text-center transition-colors flex justify-center items-center gap-2 uppercase tracking-wide">
                            <Phone className="w-5 h-5 text-[#f08b1d]" /> Book Now
                         </a>
                         <a href="/contact" className="flex-1 border-2 border-[#1a365d] text-[#1a365d] hover:bg-slate-50 font-bold py-4 rounded text-center transition-colors uppercase tracking-wide">

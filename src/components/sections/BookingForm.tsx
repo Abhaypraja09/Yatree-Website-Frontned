@@ -21,7 +21,7 @@ export default function BookingForm() {
   const handleBooking = () => {
     const emailText = email ? `%0A*Email:* ${email}` : '';
     const message = `Hello Yatree Destination, I would like to request a booking.%0A%0A*Trip Type:* ${activeTab}%0A*Pickup:* ${pickup || 'Not specified'}%0A*Drop:* ${drop || 'Not specified'}%0A*Date:* ${date || 'Not specified'}%0A*Vehicle:* ${vehicle || 'Not specified'}${emailText}`;
-    window.open(`https://wa.me/917627013579?text=${message}`, '_blank');
+    window.open(`https://wa.me/919257109728?text=${message}`, '_blank');
   };
   return (
     <section className="py-20 relative bg-navy-950">

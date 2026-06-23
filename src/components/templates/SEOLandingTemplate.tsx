@@ -149,10 +149,10 @@ export default function SEOLandingTemplate({
                 <div className="bg-navy-900 p-8 rounded-[2.5rem] text-white">
                   <h3 className="text-2xl font-bold mb-6 text-center">Instant Booking</h3>
                   <div className="space-y-4 mb-8">
-                    <a href="https://wa.me/917627013579" className="w-full h-14 bg-emerald-500 hover:bg-emerald-600 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all">
+                    <a href="https://wa.me/919257109728" className="w-full h-14 bg-emerald-500 hover:bg-emerald-600 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all">
                       <MessageCircle className="w-6 h-6" /> WhatsApp Now
                     </a>
-                    <a href="tel:+917627013579" className="w-full h-14 bg-gold-500 hover:bg-gold-600 rounded-2xl flex items-center justify-center gap-3 font-bold text-navy-950 transition-all">
+                    <a href="tel:+919257109728" className="w-full h-14 bg-gold-500 hover:bg-gold-600 rounded-2xl flex items-center justify-center gap-3 font-bold text-navy-950 transition-all">
                       <Phone className="w-5 h-5" /> Call Now
                     </a>
                   </div>

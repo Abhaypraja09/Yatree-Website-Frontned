@@ -34,13 +34,13 @@ export default function Home() {
       {/* Mobile Sticky Action Bar (Hidden on Desktop) */}
       <div className="fixed bottom-0 left-0 w-full z-[80] md:hidden flex border-t border-white/10 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
         <a
-          href="tel:+917627013579"
+          href="tel:+919257109728"
           className="flex-1 bg-midnight text-white flex items-center justify-center gap-2 py-4 font-bold text-xs uppercase tracking-widest border-r border-white/5"
         >
           <Phone className="w-4 h-4 text-gold-premium" /> Call Now
         </a>
         <a
-          href="https://wa.me/917627013579"
+          href="https://wa.me/919257109728"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-xs uppercase tracking-widest"

@@ -33,7 +33,7 @@ export default function PremiumBookingForm() {
     const selectedTab = tabs.find(t => t.id === activeTab)?.label || activeTab;
     const emailText = email ? `%0A*Email:* ${email}` : '';
     const message = `Hello Yatree Destination, I would like to request a booking.%0A%0A*Trip Type:* ${selectedTab}%0A*Pickup:* ${pickup || 'Not specified'}%0A*Drop:* ${drop || 'Not specified'}%0A*Date:* ${date || 'Not specified'}%0A*Vehicle:* ${vehicle}${emailText}`;
-    window.open(`https://wa.me/917627013579?text=${message}`, '_blank');
+    window.open(`https://wa.me/919257109728?text=${message}`, '_blank');
   };
 
   return (

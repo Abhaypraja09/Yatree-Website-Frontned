@@ -328,7 +328,7 @@ export default function ExploreUdaipurPage() {
                   
                   <div className="pt-6">
                      <a 
-                      href="https://wa.me/917627013579"
+                      href="https://wa.me/919257109728"
                       target="_blank"
                       rel="noopener noreferrer" 
                       className="inline-flex items-center gap-2 bg-slate-950 hover:bg-gold-premium text-white hover:text-midnight font-black text-[10px] uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-xl active:scale-95"
@@ -354,7 +354,7 @@ export default function ExploreUdaipurPage() {
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">Outstation Trips</h2>
             </div>
             <a 
-              href="https://wa.me/917627013579"
+              href="https://wa.me/919257109728"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-[10px] uppercase tracking-widest px-6 py-3 rounded-xl transition-all shadow-lg shadow-green-500/20"
@@ -371,8 +371,8 @@ export default function ExploreUdaipurPage() {
 
       {/* Mobile Sticky CTA footer */}
       <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white">
-        <a href="tel:+917627013579" className="flex-1 bg-slate-950 text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><Phone className="w-4 h-4 text-gold-premium" /> Call Now</a>
-        <a href="https://wa.me/917627013579" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><MessageCircle className="w-4 h-4 fill-current" /> WhatsApp</a>
+        <a href="tel:+919257109728" className="flex-1 bg-slate-950 text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><Phone className="w-4 h-4 text-gold-premium" /> Call Now</a>
+        <a href="https://wa.me/919257109728" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><MessageCircle className="w-4 h-4 fill-current" /> WhatsApp</a>
       </div>
     </main>
   );

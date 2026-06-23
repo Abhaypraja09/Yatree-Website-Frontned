@@ -39,10 +39,10 @@ export default function WeddingCarPage() {
                Arrive in breathtaking style on your big day. We specialize in luxury transportation for <strong>destination weddings in Udaipur</strong>, from royal vintage cars to premium guest convoys.
              </p>
              <div className="flex flex-wrap justify-center gap-4">
-                <a href="tel:+917627013579" className="bg-gold-premium text-midnight px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center gap-3 hover:bg-white transition-colors shadow-lg shadow-gold-premium/20">
+                <a href="tel:+919257109728" className="bg-gold-premium text-midnight px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center gap-3 hover:bg-white transition-colors shadow-lg shadow-gold-premium/20">
                   <Phone className="w-4 h-4" /> Get Wedding Quote
                 </a>
-                <a href="https://wa.me/917627013579" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center gap-2">
+                <a href="https://wa.me/919257109728" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center gap-2">
                   <MessageCircle className="w-4 h-4" /> WhatsApp Planner
                 </a>
              </div>
@@ -164,7 +164,7 @@ export default function WeddingCarPage() {
                              </div>
                           </div>
                        </div>
-                       <a href="tel:+917627013579" className="w-full bg-orange-500 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-xs mt-10 block hover:bg-orange-600 transition-colors">
+                       <a href="tel:+919257109728" className="w-full bg-orange-500 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-xs mt-10 block hover:bg-orange-600 transition-colors">
                           Get Personalized Quote
                        </a>
                     </div>
@@ -190,8 +190,8 @@ export default function WeddingCarPage() {
       <Footer />
 
       <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white">
-        <a href="tel:+917627013579" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><Phone className="w-4 h-4 text-orange-500" /> Call Now</a>
-        <a href="https://wa.me/917627013579" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
+        <a href="tel:+919257109728" className="flex-1 bg-slate-900 text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><Phone className="w-4 h-4 text-orange-500" /> Call Now</a>
+        <a href="https://wa.me/919257109728" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 font-bold text-sm uppercase tracking-widest"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
       </div>
     </main>
   );

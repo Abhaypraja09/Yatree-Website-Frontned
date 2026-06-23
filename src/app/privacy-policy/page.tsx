@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="mt-4 bg-slate-50 p-6 rounded-xl border border-slate-100">
               <p><strong>Email:</strong> Kavishjain@yatreedestination.com, info@yatreedestination.com</p>
-              <p><strong>Phone:</strong> +91 76270 13579</p>
+              <p><strong>Phone:</strong> +91 92571 09728</p>
               <p><strong>Address:</strong> 97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3, UDAIPUR, Udaipur, Rajasthan, 313001</p>
             </div>
           </section>

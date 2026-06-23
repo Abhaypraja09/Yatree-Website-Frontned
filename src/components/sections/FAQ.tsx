@@ -158,7 +158,7 @@ export default function FAQ() {
              <h4 className="text-2xl font-bold text-white mb-2">Still have questions?</h4>
              <p className="text-slate-400 text-sm">Our travel experts are available 24/7 to assist you.</p>
            </div>
-           <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-green-600 transition-colors shrink-0">
+           <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-green-600 transition-colors shrink-0">
              <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
            </a>
         </div>

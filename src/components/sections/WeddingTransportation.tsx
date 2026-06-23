@@ -62,7 +62,7 @@ export default function WeddingTransportation() {
             </div>
 
             <div className="pt-6">
-               <a href="tel:+917627013579" className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">
+               <a href="tel:+919257109728" className="inline-block bg-orange-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">
                   Discuss Your Wedding Logistics
                </a>
             </div>

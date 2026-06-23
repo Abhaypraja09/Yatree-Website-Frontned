@@ -42,7 +42,7 @@ export default function ChatWidget() {
 
         {/* Direct Call Button (Pill with Number) */}
         <motion.a 
-          href="tel:+917627013579" 
+          href="tel:+919257109728" 
           whileHover={{ scale: 1.05 }} 
           whileTap={{ scale: 0.95 }}
           className="h-12 md:h-14 px-3 rounded-full bg-slate-950 text-white hidden md:flex items-center gap-2.5 shadow-xl border border-white/10 group hover:bg-gold-premium hover:text-midnight transition-colors"
@@ -50,7 +50,7 @@ export default function ChatWidget() {
           <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-midnight/10 flex items-center justify-center shrink-0">
              <Phone className="w-4 h-4 fill-current" />
           </div>
-          <span className="font-bold text-sm tracking-wider whitespace-nowrap pr-2">+91 76270 13579</span>
+          <span className="font-bold text-sm tracking-wider whitespace-nowrap pr-2">+91 92571 09728</span>
         </motion.a>
 
         {/* Chat Toggle Button */}
@@ -154,7 +154,7 @@ export default function ChatWidget() {
                 <div className="grid grid-cols-1 gap-3">
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="https://wa.me/917627013579?text=Hi, I want a live video consultation of the cars."
+                    href="https://wa.me/919257109728?text=Hi, I want a live video consultation of the cars."
                     target="_blank"
                     className="flex items-center justify-between p-5 bg-blue-500/5 hover:bg-blue-500/10 border border-blue-500/20 rounded-3xl transition-all group"
                   >
@@ -174,7 +174,7 @@ export default function ChatWidget() {
 
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="https://wa.me/917627013579?text=Hi, I am interested in booking a luxury ride."
+                    href="https://wa.me/919257109728?text=Hi, I am interested in booking a luxury ride."
                     target="_blank"
                     className="flex items-center justify-between p-5 bg-[#25D366]/5 hover:bg-[#25D366]/10 border border-[#25D366]/20 rounded-3xl transition-all group"
                   >
@@ -194,7 +194,7 @@ export default function ChatWidget() {
 
                   <motion.a
                     whileHover={{ y: -2 }}
-                    href="tel:+917627013579"
+                    href="tel:+919257109728"
                     className="flex items-center justify-between p-5 bg-slate-950 hover:bg-slate-900 rounded-3xl transition-all group text-white shadow-xl shadow-slate-900/10"
                   >
                     <div className="flex items-center gap-4">

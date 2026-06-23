@@ -149,7 +149,7 @@ export default function Navbar() {
               <div className="mt-auto pt-12 pb-8 space-y-8">
                 <div className="space-y-4">
                     <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Quick Contact</p>
-                    <a href="tel:+917627013579" className="flex items-center gap-4 text-white group">
+                    <a href="tel:+919257109728" className="flex items-center gap-4 text-white group">
                       <div className="w-12 h-12 rounded-2xl bg-gold-premium flex items-center justify-center text-midnight group-active:scale-95 transition-transform">
                         <Phone className="w-6 h-6" />
                       </div>

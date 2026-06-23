@@ -129,7 +129,7 @@ export default async function ProgrammaticPage({ params }: PageProps) {
               </span>
               <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
             </Link>
-            <a href="tel:+917627013579" className="h-14 px-8 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
+            <a href="tel:+919257109728" className="h-14 px-8 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
               <Phone className="w-4 h-4 text-gold-premium" />
               Call Now
             </a>

@@ -79,7 +79,7 @@ function CorporateBookingContent() {
       console.warn("DB save offline", err);
     }
 
-    const whatsappNumber = "917627013579";
+    const whatsappNumber = "919257109728";
     const text = `*YATREE DESTINATION - B2B PRIORITY RESERVATION*\n` +
                  `----------------------------------------\n` +
                  `👤 *Company Rep:* ${formData.name}\n` +

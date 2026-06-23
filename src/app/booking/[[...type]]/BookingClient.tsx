@@ -193,7 +193,7 @@ function BookingEngine() {
     }
 
     // Direct WhatsApp prefill
-    const whatsappNumber = "917627013579";
+    const whatsappNumber = "919257109728";
     const text = `*YATREE DESTINATION - RESERVATION WITH RATE*\n` +
                  `----------------------------------------\n` +
                  `👤 *Customer Name:* ${formData.name}\n` +
@@ -578,15 +578,15 @@ function BookingEngine() {
                     </div>
                     <div>
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
-                      <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
+                      <a href="tel:+919257109728" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 92571 09728</a>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
-                    <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                    <a href="tel:+919257109728" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
                       Call Now
                     </a>
-                    <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                    <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                       <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
                     </a>
                   </div>
@@ -853,7 +853,7 @@ function BookingEngine() {
 
                   <div className="bg-white border border-slate-200/80 rounded-[2.5rem] p-6 md:p-10 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                     {[
-                      { q: "How can I book a taxi in Udaipur?", a: "You can book a taxi by calling us directly at +91 7627013579 or by submitting the instant booking inquiry form on this page, which will pre-fill your trip details to send to our coordinator via WhatsApp." },
+                      { q: "How can I book a taxi in Udaipur?", a: "You can book a taxi by calling us directly at +91 9257109728 or by submitting the instant booking inquiry form on this page, which will pre-fill your trip details to send to our coordinator via WhatsApp." },
                       { q: "Do you provide airport pickup and drop services?", a: "Yes, we provide 24/7 dedicated airport transfers to and from Maharana Pratap Airport in Udaipur. Our drivers monitor flight schedules to ensure prompt pick-ups." },
                       { q: "Can I hire a taxi for local sightseeing?", a: "Absolutely! We offer flexible sightseeing taxi packages for Udaipur, including standard half-day (4 Hours) and full-day (8 Hours & 12 Hours) tours." },
                       { q: "Do you provide Tempo Travellers?", a: "Yes, we maintain a fleet of premium Force Tempo Travellers in 12-seater, 17-seater, and 21-seater configurations, ideal for family trips and group travels." },
@@ -911,10 +911,10 @@ function BookingEngine() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                  <a href="tel:+917627013579" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight">
-                    <Phone className="w-4 h-4" /> Call Now: +91 76270 13579
+                  <a href="tel:+919257109728" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight">
+                    <Phone className="w-4 h-4" /> Call Now: +91 92571 09728
                   </a>
-                  <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
+                  <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
                     <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Booking
                   </a>
                 </div>
@@ -987,15 +987,15 @@ function BookingEngine() {
                         </div>
                         <div>
                           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
-                          <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
+                          <a href="tel:+919257109728" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 92571 09728</a>
                         </div>
                       </div>
                       
                       <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
-                        <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                        <a href="tel:+919257109728" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
                           Call Now
                         </a>
-                        <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                        <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                           <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
                         </a>
                       </div>
@@ -1159,7 +1159,7 @@ function BookingEngine() {
 
                   <div className="bg-white border border-slate-200/80 rounded-[2.5rem] p-6 md:p-10 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                     {[
-                      { q: "How can I book a Tempo Traveller in Udaipur?", a: "You can book a Tempo Traveller by calling us directly at +91 7627013579 or by submitting the instant booking inquiry form on this page to send your parameters directly to our coordinator via WhatsApp." },
+                      { q: "How can I book a Tempo Traveller in Udaipur?", a: "You can book a Tempo Traveller by calling us directly at +91 9257109728 or by submitting the instant booking inquiry form on this page to send your parameters directly to our coordinator via WhatsApp." },
                       { q: "Do you provide luxury Tempo Travellers in Udaipur?", a: "Yes. We provide fully equipped luxury Tempo Travellers with premium reclining seats, enhanced legroom, LED lighting, and individual charging points for weddings, corporate events, and VIP travel." },
                       { q: "What is the Tempo Traveller price in Udaipur?", a: "Pricing varies according to seating capacity, travel distance, and trip duration. We recommend contacting our travel experts to get a customized fixed price quotation." },
                       { q: "Do you provide 12 seater Tempo Traveller in Udaipur?", a: "Yes, we offer a wide range of seating options, including 12, 17, 20, and 21-seater Tempo Travellers." },
@@ -1217,10 +1217,10 @@ function BookingEngine() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                  <a href="tel:+917627013579" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight font-bold">
-                    <Phone className="w-4 h-4" /> Call Now: +91 76270 13579
+                  <a href="tel:+919257109728" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight font-bold">
+                    <Phone className="w-4 h-4" /> Call Now: +91 92571 09728
                   </a>
-                  <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
+                  <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
                     <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Booking
                   </a>
                 </div>
@@ -1277,13 +1277,13 @@ export default function BookingPage() {
 
       {/* WhatsApp Concierge floating widget */}
       <div className="fixed bottom-8 right-8 z-[90] hidden md:block">
-         <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300">
+         <a href="https://wa.me/919257109728" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300">
             <MessageCircle className="w-6 h-6 fill-current" />
          </a>
       </div>
       <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white">
-        <a href="tel:+917627013579" className="flex-1 bg-slate-950 text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><Phone className="w-4 h-4 text-gold-premium" /> Call Concierge</a>
-        <a href="https://wa.me/917627013579" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
+        <a href="tel:+919257109728" className="flex-1 bg-slate-950 text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><Phone className="w-4 h-4 text-gold-premium" /> Call Concierge</a>
+        <a href="https://wa.me/919257109728" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4.5 font-bold text-xs uppercase tracking-wider"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
       </div>
     </main>
   );

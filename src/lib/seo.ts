@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   ogImage: "/logo.png",
   twitterHandle: "@yatreedestination",
   address: "97, BEHIND VIKAS HOSPITAL, HIRAN MAGRI SEC 3, UDAIPUR, Udaipur, Rajasthan, 313001",
-  phone: "+91 76270 13579",
+  phone: "+91 92571 09728",
   email: "Kavishjain@yatreedestination.com",
   keywords: [
     "Taxi Service in Udaipur",

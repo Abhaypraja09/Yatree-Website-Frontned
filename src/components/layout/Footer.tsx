@@ -75,7 +75,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex shrink-0">
-              <a href="tel:+917627013579" className="group relative inline-flex items-center justify-center gap-3 bg-gold-premium text-navy-950 px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+              <a href="tel:+919257109728" className="group relative inline-flex items-center justify-center gap-3 bg-gold-premium text-navy-950 px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                 <Phone className="w-4 h-4" />
                 Call Now to Book
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -139,8 +139,8 @@ export default function Footer() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-gold-premium">
                   <Phone className="w-4 h-4" />
                 </div>
-                <a href="tel:+917627013579" className="text-sm text-slate-400 font-medium hover:text-gold-premium transition-colors">
-                  +91 76270 13579
+                <a href="tel:+919257109728" className="text-sm text-slate-400 font-medium hover:text-gold-premium transition-colors">
+                  +91 92571 09728
                 </a>
               </div>
               <div className="flex items-center gap-4">

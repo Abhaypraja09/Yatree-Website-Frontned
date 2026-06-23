@@ -104,7 +104,7 @@ export default function OutstationSlider({ excursions }: { excursions: Excursion
                 </div>
                 
                 <a 
-                  href="https://wa.me/917627013579"
+                  href="https://wa.me/919257109728"
                   target="_blank"
                   rel="noopener noreferrer" 
                   className={`w-full bg-white border-2 border-slate-200 hover:border-gold-premium hover:bg-gold-premium hover:text-midnight text-slate-900 font-black text-[10px] uppercase tracking-widest py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 active:scale-[0.98] ${!isCenter && 'pointer-events-none'}`}
